@@ -1,0 +1,71 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Drivers 2025</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">F1</div>
+        <div class="nav-links">
+            <a href="#schedule">Schedule</a>
+            <a href="#results">Results</a>
+            <a href="#news">News</a>
+            <a href="#drivers" style="color: #e10600;">Drivers</a>
+            <a href="#teams">Teams</a>
+            <a href="#standings">Standings</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>F1 DRIVERS 2025</h1>
+            <p>Find the current Formula 1 drivers for the 2025 season</p>
+        </div>
+
+        <div class="search-section">
+            <div class="search-container">
+                <input
+                        type="text"
+                        class="search-input"
+                        id="searchInput"
+                        placeholder="Search drivers by name..."
+                        autocomplete="off"
+                >
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <div class="filter-dropdown">
+                <button class="filter-button" id="filterButton">
+                    <span id="filterText">All Teams</span>
+                    <span>▼</span>
+                </button>
+                <div class="filter-menu" id="filterMenu">
+                    <div class="filter-option active" data-team="all">
+                        <span class="team-badge" style="background: linear-gradient(45deg, #e10600, #ff6b00);">⭐</span>
+                        <span>All Teams</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="driversContainer">
+            <div class="loading">
+                <div class="spinner"></div>
+                Loading drivers...
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>

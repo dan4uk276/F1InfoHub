@@ -1,0 +1,602 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #e10600;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: #e10600;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #fff, #e10600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    opacity: 0.8;
+}
+
+.search-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.search-container {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 18px 50px 18px 20px;
+    font-size: 1.1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #e10600;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    font-size: 1.2rem;
+}
+
+.filter-dropdown {
+    position: relative;
+}
+
+.filter-button {
+    padding: 18px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #e10600;
+}
+
+.filter-menu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: rgba(20, 20, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 15px;
+    min-width: 250px;
+    display: none;
+    z-index: 100;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.filter-menu.active {
+    display: block;
+}
+
+.filter-option {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.filter-option.active {
+    background: rgba(225, 6, 0, 0.2);
+    border-left: 3px solid #e10600;
+}
+
+.team-badge {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.loading {
+    text-align: center;
+    padding: 80px 20px;
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #e10600;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(220, 0, 0, 0.1);
+    border-radius: 16px;
+    border: 2px solid rgba(220, 0, 0, 0.3);
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    opacity: 0.6;
+    font-size: 1.3rem;
+}
+
+.drivers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.driver-card {
+    border-radius: 16px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.driver-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.driver-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.driver-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    transform: translate(40%, -40%);
+}
+
+.driver-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--driver-bg-image, no-repeat  center center);
+    background-size: auto, auto;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center center;
+    opacity: 0.2; /* Регулируйте это значение (от 0.1 до 0.3) */
+    z-index: 1;
+
+}
+
+.driver-image-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 110px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.driver-image {
+    width: 75%; /* увеличиваем, чтобы был крупнее — видно только верх */
+    height: auto;
+    object-fit: cover;
+    transform: translateY(70%); /* чуть опускаем вниз, чтобы не обрезать голову */
+    transition: transform 0.3s ease;
+}
+
+.driver-card:hover .driver-image {
+    transform: translateY(70%) scale(1.05);
+}
+
+.driver-card.mclaren { background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%); }
+.driver-card.mercedes { background: linear-gradient(135deg, #00d2be 0%, #00a896 100%); }
+.driver-card.ferrari { background: linear-gradient(135deg, #dc0000 0%, #a00000 100%); }
+.driver-card.redbull { background: linear-gradient(135deg, #0600ef 0%, #1e3a8a 100%); }
+.driver-card.alpine { background: linear-gradient(135deg, #0090ff 0%, #0070d0 100%); }
+.driver-card.aston-martin { background: linear-gradient(135deg, #006f62 0%, #00524a 100%); }
+.driver-card.haas { background: linear-gradient(135deg, #b6babd 0%, #787d82 100%); }
+.driver-card.rb { background: linear-gradient(135deg, #6692ff 0%, #4169e1 100%); }
+.driver-card.kick-sauber { background: linear-gradient(135deg, #52e252 0%, #2eb82e 100%); }
+.driver-card.williams { background: linear-gradient(135deg, #005aff 0%, #003d99 100%); }
+
+.driver-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.driver-info {
+    flex: 1;
+}
+
+/* базовый стиль бейджа номера */
+.driver-number-badge {
+    font-size: 2.5rem;
+    font-weight: 900;
+    /*background: rgba(255, 255, 255, 0.05);*/
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*backdrop-filter: blur(5px);*/
+    /*border: 2px solid rgba(255, 255, 255, 0.3);*/
+    /*line-height: 1;*/
+    text-align: center;
+
+    color: #fff;
+}
+
+.driver-number-badge {
+    font-weight: 900;
+    color: #fff;
+}
+
+/* === 🟦 RED BULL RACING === */
+.redbull .driver-number-badge {
+    font-family: 'Anton', sans-serif;
+    transform: scaleX(0.9) skewX(-8deg);
+    letter-spacing: -0.05em;
+}
+
+/* === 🔴 FERRARI === */
+.ferrari .driver-number-badge {
+    font-family: 'Russo One', sans-serif;
+    transform: scaleX(1.1) skewX(-12deg);
+    letter-spacing: -0.08em;
+}
+
+/* === 🩵 MERCEDES === */
+.mercedes .driver-number-badge {
+    font-family: 'Orbitron', sans-serif;
+    transform: scale(0.9) skewX(-3deg);
+    letter-spacing: 0.02em;
+}
+
+/* === 🧡 MCLAREN === */
+.mclaren .driver-number-badge {
+    font-family: 'Rajdhani', sans-serif;
+    font-stretch: condensed;
+    transform: scaleX(0.8) ;
+    letter-spacing: -0.03em;
+}
+
+/* === 🟩 ASTON MARTIN === */
+.aston-martin .driver-number-badge {
+    font-family: 'Michroma', sans-serif;
+    transform: scaleY(0.9) skewX(-5deg);
+    letter-spacing: 0.04em;
+}
+
+/* === 🟦 WILLIAMS === */
+.williams .driver-number-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    transform: scaleX(1.2) skewX(-4deg);
+    letter-spacing: -0.01em;
+}
+
+/* === 🩷 ALPINE === */
+.alpine .driver-number-badge {
+    font-family: 'Exo 2', sans-serif;
+    transform: scaleX(0.85) skewX(-10deg) rotate(1deg);
+    letter-spacing: 0.05em;
+}
+
+/* === ⚪ HAAS === */
+.haas .driver-number-badge {
+    font-family: 'Bebas Neue', sans-serif;
+    transform: scale(1.3, 0.9) skewX(-6deg);
+    letter-spacing: -0.06em;
+}
+
+/* === 🟣 RB === */
+.rb .driver-number-badge {
+    font-family: 'Audiowide', cursive;
+    transform: scaleX(1.1) rotateY(10deg) skewX(-5deg);
+    letter-spacing: 0.03em;
+}
+
+/* === 🟩 KICK SAUBER === */
+.kick-sauber .driver-number-badge {
+    font-family: 'Saira Condensed', sans-serif;
+    transform: scale(0.9, 1.2) skewX(-2deg);
+    letter-spacing: 0.07em;
+}
+
+.driver-number-badge {
+    -webkit-text-stroke: 1px rgba(255,255,255,0.9); /* WebKit */
+    text-shadow: 0 6px 6px rgba(0,0,0,0.6);
+}
+
+.driver-name {
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.driver-surname {
+    font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/*.team-logo {*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    background: rgba(255, 255, 255, 0.2);*/
+/*    border-radius: 6px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    font-size: 0.8rem;*/
+/*    font-weight: 900;*/
+/*}*/
+
+.team-name {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.driver-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.flag {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.flag img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.stats {
+    display: flex;
+    gap: 15px;
+}
+
+.stat-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 8px 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin-top: 2px;
+}
+
+@media (max-width: 1024px) {
+    .drivers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header {
+        margin-bottom: 30px;
+    }
+
+    .search-section {
+        flex-direction: column;
+    }
+
+    .search-container {
+        min-width: 100%;
+    }
+
+    .filter-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .drivers-grid {
+        gap: 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .driver-card {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .driver-number-badge {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
