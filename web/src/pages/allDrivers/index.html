@@ -1,0 +1,70 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Drivers 2025</title>
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../../styles/variables.css">
+    <link rel="stylesheet" href="../../styles/global.css">
+
+    <!-- Header Styles -->
+    <link rel="stylesheet" href="../../components/header/header.css">
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="allDrivers.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap" rel="stylesheet">
+
+    <script type="module" src="allDrivers.js"></script>
+</head>
+<body>
+
+    <main>
+        <div class="page-header">
+            <h1>Formula 1 Drivers 2025</h1>
+            <p class="subtitle">Meet the fastest drivers on the planet</p>
+        </div>
+
+        <div class="container">
+            <div class="filters">
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="Search drivers..." aria-label="Search drivers">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+
+                <select id="team-filter" aria-label="Filter by team">
+                    <option value="all">All Teams</option>
+                    <option value="red bull">Red Bull Racing</option>
+                    <option value="mercedes">Mercedes-AMG Petronas</option>
+                    <option value="ferrari">Scuderia Ferrari</option>
+                    <option value="mclaren">McLaren F1 Team</option>
+                    <option value="alpine">Alpine F1 Team</option>
+                    <option value="aston martin">Aston Martin F1 Team</option>
+                    <option value="haas">MoneyGram Haas F1 Team</option>
+                    <option value="rb">Racing Bulls F1 Team</option>
+                    <option value="kick sauber">Kick Sauber F1 Team</option>
+                    <option value="williams">Williams Racing</option>
+                </select>
+            </div>
+
+            <div id="driversContainer">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    Loading drivers...
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="allDrivers.js"></script>
+</body>

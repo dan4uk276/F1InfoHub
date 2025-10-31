@@ -2,9 +2,12 @@
   "name": "F1InfoHubWeb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "type": "module",
+  "main": "./pages/allDrivers/allDrivers.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "private": true
+  "private": true,
+  "license": "ISC"
+
 }

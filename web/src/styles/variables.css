@@ -1,0 +1,154 @@
+/* src/styles/variables.css */
+
+:root {
+    /* F1 Brand Colors */
+    --f1-red: #e10600;
+    --f1-red-light: #ff4d4d;
+    --f1-red-dark: #b30500;
+
+    --f1-dark: #15151e;
+    --f1-gray: #38383f;
+    --f1-gray-light: #4a4a51;
+
+    --f1-white: #ffffff;
+    --f1-silver: #d0d0d2;
+
+
+
+        /* 🔴 RED BULL RACING */
+        --redbull-primary: #0600ef;
+        --redbull-secondary: #1e3a8a;
+        --redbull-dark: #001f4c;
+        --redbull: linear-gradient(90deg,
+        var(--redbull-primary) 0%,
+        var(--redbull-secondary) 30%,
+        var(--redbull-dark) 70%
+        );
+
+        /* 🟢 MERCEDES-AMG PETRONAS F1 TEAM */
+        --mercedes-primary: #00d2be;
+        --mercedes-secondary: #00a896;
+        --mercedes-dark: #006a5e;
+        --mercedes: linear-gradient(90deg,
+        var(--mercedes-primary) 0%,
+        var(--mercedes-secondary) 30%,
+        var(--mercedes-dark) 70%
+        );
+
+        /* 🔴 SCUDERIA FERRARI */
+        --ferrari-primary: #dc0000;
+        --ferrari-secondary: #a00000;
+        --ferrari-dark: #660000;
+        --ferrari: linear-gradient(90deg,
+        var(--ferrari-primary) 0%,
+        var(--ferrari-secondary) 30%,
+        var(--ferrari-dark) 70%
+        );
+
+        /* 🟠 McLAREN FORMULA 1 TEAM */
+        --mclaren-primary: #ff8c1a;
+        --mclaren-secondary: #ff6a00;
+        --mclaren-dark: #732c09;
+        --mclaren: linear-gradient(90deg,
+        var(--mclaren-primary) 0%,
+        var(--mclaren-secondary) 30%,
+        var(--mclaren-dark) 70%
+        );
+
+        /* 🔵 BWT ALPINE F1 TEAM */
+        --alpine-primary: #0090ff;
+        --alpine-secondary: #0070d0;
+        --alpine-dark: #004c8f;
+        --alpine: linear-gradient(90deg,
+        var(--alpine-primary) 0%,
+        var(--alpine-secondary) 30%,
+        var(--alpine-dark) 70%
+        );
+
+        /* 🟢 ASTON MARTIN ARAMCO F1 TEAM */
+        --aston-martin-primary: #006f62;
+        --aston-martin-secondary: #00524a;
+        --aston-martin-dark: #003630;
+        --aston-martin: linear-gradient(90deg,
+        var(--aston-martin-primary) 0%,
+        var(--aston-martin-secondary) 30%,
+        var(--aston-martin-dark) 70%
+        );
+
+        /* ⚪ HAAS F1 TEAM */
+        --haas-primary: #b6babd;
+        --haas-secondary: #787d82;
+        --haas-dark: #3a3e42;
+        --haas: linear-gradient(90deg,
+        var(--haas-primary) 0%,
+        var(--haas-secondary) 30%,
+        var(--haas-dark) 70%
+        );
+
+        /* 🔵 VISA CASH APP RB F1 TEAM */
+        --rb-primary: #6692ff;
+        --rb-secondary: #4169e1;
+        --rb-dark: #1c3b99;
+        --rb: linear-gradient(90deg,
+        var(--rb-primary) 0%,
+        var(--rb-secondary) 30%,
+        var(--rb-dark) 70%
+        );
+
+        /* 🟢 STAKE F1 TEAM KICK SAUBER */
+        --kick-sauber-primary: #52e252;
+        --kick-sauber-secondary: #2eb82e;
+        --kick-sauber-dark: #166b16;
+        --kick-sauber: linear-gradient(90deg,
+        var(--kick-sauber-primary) 0%,
+        var(--kick-sauber-secondary) 30%,
+        var(--kick-sauber-dark) 70%
+        );
+
+        /* 🔵 WILLIAMS RACING */
+        --williams-primary: #005aff;
+        --williams-secondary: #003d99;
+        --williams-dark: #002255;
+        --williams: linear-gradient(90deg,
+        var(--williams-primary) 0%,
+        var(--williams-secondary) 30%,
+        var(--williams-dark) 70%
+        );
+
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+
+    /* Typography */
+    --font-primary: 'Rajdhani', sans-serif;
+    --font-display: 'Bebas Neue', cursive;
+    --font-tech: 'Orbitron', sans-serif;
+
+    /* Transitions */
+    --transition-speed: 0.3s;
+    --transition-timing: ease;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.4);
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+
+    /* Z-index */
+    --z-dropdown: 100;
+    --z-sticky: 500;
+    --z-header: 1000;
+    --z-modal: 2000;
+    --z-tooltip: 3000;
+}

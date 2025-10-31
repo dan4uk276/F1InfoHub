@@ -57,6 +57,8 @@ public class ImageController {
                 contentType = "image/png";
             } else if (filename.endsWith(".jpg") || filename.endsWith(".jpeg")) {
                 contentType = "image/jpeg";
+            } else if (filename.endsWith(".svg")) {
+                contentType = "image/svg";
             }
 
             return ResponseEntity.ok()
