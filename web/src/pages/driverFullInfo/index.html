@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Profile | Formula 1</title>
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../../styles/variables.css">
+    <link rel="stylesheet" href="../../styles/global.css">
+
+    <!-- Header Component Styles -->
+    <link rel="stylesheet" href="../../components/header/header.css">
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="driverFullInfo.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Formula1:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Page Script -->
+    <script type="module" src="driverFullInfo.js"></script>
+</head>
+<body>
+<!-- Header will be injected here by JavaScript -->
+
+<main class="driver-profile">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- Content will be injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-tabs">
+                <button class="tab-btn active" data-tab="season">2025 Season</button>
+                <button class="tab-btn" data-tab="career">Career Stats</button>
+            </div>
+
+            <div class="tab-content active" id="season-stats">
+                <div class="stats-grid">
+                    <!-- Season stats will be injected by JS -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="career-stats">
+                <div class="stats-grid">
+                    <!-- Career stats will be injected by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="bio-section">
+        <div class="container">
+            <div class="bio-content">
+                <div class="bio-header">
+                    <h2>Biography</h2>
+                    <div class="bio-info-cards">
+                        <!-- Bio info will be injected by JS -->
+                    </div>
+                </div>
+                <div class="bio-text">
+                    <!-- Biography text will be injected by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Content Section -->
+    <section class="related-section">
+        <div class="container">
+            <h2 class="section-title">Latest News & Videos</h2>
+            <div class="related-grid">
+                <!-- Related content will be injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Back Button -->
+    <div class="container">
+        <button class="back-button" onclick="window.location.href='../allDrivers/'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to All Drivers
+        </button>
+    </div>
+</main>
+</body>
+</html>

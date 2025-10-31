@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column
     private String name;
@@ -21,11 +21,6 @@ public class Driver {
 
     @Column(name = "team_name")
     private String teamName;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "team_id", referencedColumnName = "id")
-    @JsonBackReference // Избегаем циклической сериализации
-    private Team team;
 
     @Column
     private String country;
@@ -54,8 +49,24 @@ public class Driver {
     @Column(name = "place_of_birth")
     private String placeOfBirth;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "team_id", referencedColumnName = "id")
+    @JsonBackReference // Избегаем циклической сериализации
+    private Team team;
+
     @Column(name = "image_filename", length = 100)
     private String imageFilename;
+
+    @Column(name = "biography", columnDefinition = "TEXT")
+    private String biography;
+
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
+    }
 
     public String getImageFilename() {
         return imageFilename;
@@ -65,11 +76,11 @@ public class Driver {
         this.imageFilename = imageFilename;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -105,8 +116,8 @@ public class Driver {
         return team;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
+    public void setTeam(Team team_id) {
+        this.team = team_id;
     }
 
     public void setTeamName(String teamName) {

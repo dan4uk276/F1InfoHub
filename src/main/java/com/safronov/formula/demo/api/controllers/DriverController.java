@@ -1,9 +1,15 @@
 package com.safronov.formula.demo.api.controllers;
+import com.safronov.formula.demo.application.mappers.DriverMapper;
+import com.safronov.formula.demo.domain.DTO.DriverCardDto;
 import com.safronov.formula.demo.domain.entity.Driver;
 import com.safronov.formula.demo.domain.interfaces.*;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+
+import static java.util.stream.Collectors.toList;
 
 @RestController
 @RequestMapping("/api/v1/")
@@ -15,17 +21,31 @@ public class DriverController {
     private final GetDriversByNumberService getDriversByNumberService;
     private final GetDriversByTeamService getDriversByTeamService;
     private final GetDriversByCountryService getDriversByCountryService;
+    private final GetDriverByIdService getDriverByIdService;
 
-    public DriverController(GetDriversService getDriversService, GetDriversByNameService getDriversByNameService, GetDriversByNumberService getDriversByNumberService, GetDriversByTeamService getDriversByTeamService, GetDriversByCountryService getDriversByCountryService) {
+
+    public DriverController(GetDriversService getDriversService,
+                            GetDriversByNameService getDriversByNameService,
+                            GetDriversByNumberService getDriversByNumberService,
+                            GetDriversByTeamService getDriversByTeamService,
+                            GetDriversByCountryService getDriversByCountryService, GetDriverByIdService getDriverByIdService) {
         this.getDriversService = getDriversService;
         this.getDriversByNameService = getDriversByNameService;
         this.getDriversByNumberService = getDriversByNumberService;
         this.getDriversByTeamService = getDriversByTeamService;
         this.getDriversByCountryService = getDriversByCountryService;
+        this.getDriverByIdService = getDriverByIdService;
+    }
+
+    @GetMapping("/drivers/{id}")
+    public @ResponseBody ResponseEntity<Driver> getDriverById(@PathVariable  Integer id) {
+         return getDriverByIdService.getDriverById(id)
+                         .map(ResponseEntity::ok)
+                         .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/drivers")
-    public @ResponseBody List<Driver> getDrivers() {
+    public @ResponseBody List<DriverCardDto> getDrivers() {
 
         return getDriversService.get();
     }
