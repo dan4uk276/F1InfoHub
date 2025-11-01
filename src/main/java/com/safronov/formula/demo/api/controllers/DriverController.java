@@ -1,15 +1,11 @@
 package com.safronov.formula.demo.api.controllers;
-import com.safronov.formula.demo.application.mappers.DriverMapper;
 import com.safronov.formula.demo.domain.DTO.DriverCardDto;
 import com.safronov.formula.demo.domain.entity.Driver;
-import com.safronov.formula.demo.domain.interfaces.*;
+import com.safronov.formula.demo.domain.interfaces.driver.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
-
-import static java.util.stream.Collectors.toList;
 
 @RestController
 @RequestMapping("/api/v1/")

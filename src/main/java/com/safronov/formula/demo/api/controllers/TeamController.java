@@ -1,7 +1,7 @@
 package com.safronov.formula.demo.api.controllers;
 
-import com.safronov.formula.demo.domain.entity.Team;
-import com.safronov.formula.demo.domain.interfaces.GetTeamsService;
+import com.safronov.formula.demo.domain.DTO.TeamCardDto;
+import com.safronov.formula.demo.domain.interfaces.team.GetTeamsService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +18,7 @@ public class TeamController {
     }
 
     @GetMapping("/teams")
-    public @ResponseBody List<Team> getTeams() {
-
+    public @ResponseBody List<TeamCardDto> getTeams() {
         return getTeamsService.get();
     }
 }

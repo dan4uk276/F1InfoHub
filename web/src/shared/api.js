@@ -78,6 +78,11 @@ export async function fetchAllTeams() {
     return fetchData(url);
 }
 
+export async function fetchTeamById(id) {
+    const url = `${API_CONFIG.baseUrl}${API_CONFIG.endpoints.teamById}${id}`;
+    return fetchData(url);
+}
+
 // Schedule API calls
 export async function fetchSchedule() {
     const url = `${API_CONFIG.baseUrl}${API_CONFIG.endpoints.schedule}`;

@@ -1,7 +1,7 @@
 package com.safronov.formula.demo.application.services.driver;
 
 import com.safronov.formula.demo.domain.entity.Driver;
-import com.safronov.formula.demo.domain.interfaces.GetDriversByTeamService;
+import com.safronov.formula.demo.domain.interfaces.driver.GetDriversByTeamService;
 import com.safronov.formula.demo.infrastructure.repositories.DriverRepository;
 import org.springframework.stereotype.Service;
 

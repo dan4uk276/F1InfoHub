@@ -1,0 +1,438 @@
+/* src/pages/teams/teams.css */
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--f1-silver);
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
+/* Filters Section */
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    background: var(--f1-gray);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    color: white;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: all var(--transition-speed);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--f1-red);
+    background: var(--f1-gray-light);
+}
+
+.search-box input::placeholder {
+    color: var(--f1-silver);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--f1-silver);
+    pointer-events: none;
+}
+
+#championship-filter {
+    padding: 1rem 2.5rem 1rem 1rem;
+    background: var(--f1-gray);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    color: white;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+}
+
+#championship-filter:focus {
+    outline: none;
+    border-color: var(--f1-red);
+    background-color: var(--f1-gray-light);
+}
+
+#championship-filter option {
+    background: var(--f1-dark);
+    padding: 0.5rem;
+}
+
+/* Teams Grid */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* Team Card */
+.team-card {
+    border-radius: var(--radius-md);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    min-height: 256px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.team-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.team-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.team-card:hover .team-name{
+    text-decoration: underline;
+    text-underline-offset: 4px;     /* Отступ от текста */
+    text-decoration-thickness: 2px;  /* Толщина линии */
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 250px;
+    transform: translate(40%, -40%);
+}
+
+.team-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--team-bg-image, no-repeat center center);
+    background-size: auto, auto;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center center;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+/* Car Image Container */
+.car-image-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: self-end;
+    pointer-events: none;
+}
+
+.car-image {
+    width: 480px;
+    height: auto;
+    object-fit: contain;
+
+    transform: translate(3%, 5%);
+    transition: transform 0.3s ease;
+}
+
+/*.team-card:hover .car-image {*/
+/*    transform: translateY(15%) scale(1.05);*/
+/*}*/
+
+/* Team Colors */
+.team-card.mclaren { background: var(--mclaren); }
+.team-card.mercedes { background: var(--mercedes); }
+.team-card.ferrari { background: var(--ferrari); }
+.team-card.redbull { background: var(--redbull); }
+.team-card.alpine { background: var(--alpine); }
+.team-card.aston-martin { background: var(--aston-martin); }
+.team-card.haas { background: var(--haas); }
+.team-card.rb { background: var(--rb); }
+.team-card.kick-sauber { background: var(--kick-sauber); }
+.team-card.williams { background: var(--williams); }
+
+/* Team Header */
+.team-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.team-info {
+    flex: 1;
+}
+
+.team-logo {
+    width: 50px;
+    height: 50px;
+    min-width: 50px; /* предотвращает сжатие при адаптации */
+    min-height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    flex-shrink: 0;
+
+}
+
+.team-logo img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    display: block;
+    transform: translateX(12%);
+}
+
+.team-name {
+    font-size: clamp(1.8rem, 3vw, 2rem);
+    font-weight: 650;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    font-family: var(--font-display);
+}
+
+.team-full-name {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    font-weight: 600;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+/* Drivers Section */
+.team-drivers {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* выравниваем все driver-item влево */
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.driver-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+}
+
+.driver-avatar {
+    width: 35px;
+    height: 35px;
+    min-height: 35px;
+    min-width: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.driver-avatar img {
+    width: 80%; /* увеличиваем, чтобы был крупнее — видно только верх */
+    height: auto;
+    object-fit: cover;
+    transform: translate(10%, 35%); /* чуть опускаем вниз, чтобы не обрезать голову */
+    transition: transform 0.3s ease;
+}
+
+.driver-name-short {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* Team Stats */
+.team-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.position-badge {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.team-stats {
+    display: flex;
+    gap: 15px;
+}
+
+.stat-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 10px 15px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    opacity: 0.85;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-top: 2px;
+}
+
+/* Base Badge */
+.championship-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 215, 0, 0.9);
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 3;
+    display: none;
+}
+
+.team-card.champion .championship-badge {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .teams-grid {
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+    }
+
+    .driver-item {
+        width: 100%;
+    }
+
+    .team-drivers {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    .search-box {
+        min-width: 100%;
+    }
+
+    #championship-filter {
+        width: 100%;
+    }
+
+    .teams-grid {
+        gap: 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .team-card {
+        min-height: 256px;
+        padding: 25px;
+    }
+
+    .driver-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .position-badge {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .team-stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .stat-item {
+        padding: 8px 12px;
+    }
+}

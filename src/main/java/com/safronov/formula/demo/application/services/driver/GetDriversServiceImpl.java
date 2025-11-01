@@ -2,8 +2,7 @@ package com.safronov.formula.demo.application.services.driver;
 
 import com.safronov.formula.demo.application.mappers.DriverMapper;
 import com.safronov.formula.demo.domain.DTO.DriverCardDto;
-import com.safronov.formula.demo.domain.entity.Driver;
-import com.safronov.formula.demo.domain.interfaces.GetDriversService;
+import com.safronov.formula.demo.domain.interfaces.driver.GetDriversService;
 import com.safronov.formula.demo.infrastructure.repositories.DriverRepository;
 import org.springframework.stereotype.Service;
 

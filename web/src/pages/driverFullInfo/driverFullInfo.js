@@ -60,8 +60,8 @@ function renderHeroSection(driver) {
         <div class="hero-image-wrapper">
             <div class="hero-number-bg">${driver.number || '00'}</div>
             <picture>
-                <source srcset="${API_CONFIG.baseUrl}${API_CONFIG.endpoints.driverImages}${driver.imageFilename || 'default.jpg'}" type="image/avif">
-                <img src="${API_CONFIG.baseUrl}${API_CONFIG.endpoints.driverImages}${driver.imageFilename || 'default.jpg'}" 
+                <source srcset="${API_CONFIG.baseUrl}${API_CONFIG.endpoints.driverImages}${driver.imageFilename}" type="image/avif">
+                <img src="${API_CONFIG.baseUrl}${API_CONFIG.endpoints.driverImages}${driver.imageFilename}" 
                  alt="${driver.name}"
                  class="hero-driver-image"
                  onerror="this.src='${API_CONFIG.baseUrl}${API_CONFIG.endpoints.driverImages}default.jpg'">
@@ -70,7 +70,7 @@ function renderHeroSection(driver) {
         
         <div class="hero-info">
             <div class="driver-team-badge">
-                ${driver.teamName || 'Team TBA'}
+                ${driver.teamName}
             </div>
             <h1 class="driver-name-large">${driver.name}</h1>
             
@@ -79,7 +79,7 @@ function renderHeroSection(driver) {
             
             <div class="hero-quick-stats">
                 <div class="quick-stat">
-                    <span class="quick-stat-value">${driver.wdc || '0'}</span>
+                    <span class="quick-stat-value">${driver.wdc}</span>
                     <span class="quick-stat-label">Championships</span>
                 </div>
                 <div class="quick-stat">
@@ -87,7 +87,7 @@ function renderHeroSection(driver) {
                     <span class="quick-stat-label">Wins</span>
                 </div>
                 <div class="quick-stat">
-                    <span class="quick-stat-value">${driver.podiums || '0'}</span>
+                    <span class="quick-stat-value">${driver.podiums}</span>
                     <span class="quick-stat-label">Podiums</span>
                 </div>
             </div>
