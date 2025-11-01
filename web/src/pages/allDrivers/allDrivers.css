@@ -80,19 +80,19 @@
 
 .drivers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
     gap: 25px;
     margin-bottom: 30px;
 }
 
 .driver-card {
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 25px;
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
-    min-height: 350px;
+    min-height: 256px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -100,6 +100,18 @@
     animation: fadeInUp 0.6s ease forwards;
 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.driver-card:hover .driver-name{
+    text-decoration: underline;
+    text-underline-offset: 4px;     /* Отступ от текста */
+    text-decoration-thickness: 2px;  /* Толщина линии */
+}
+
+.driver-card:hover .driver-surname{
+    text-decoration: underline;
+    text-underline-offset: 4px;     /* Отступ от текста */
+    text-decoration-thickness: 2px;  /* Толщина линии */
 }
 
 .driver-card > * {
@@ -130,8 +142,6 @@
     right: 0;
     width: 250px;
     height: 250px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 50%;
     transform: translate(40%, -40%);
 }
 
@@ -165,7 +175,7 @@
 }
 
 .driver-image {
-    width: 75%; /* увеличиваем, чтобы был крупнее — видно только верх */
+    width: 60%; /* увеличиваем, чтобы был крупнее — видно только верх */
     height: auto;
     object-fit: cover;
     transform: translateY(70%); /* чуть опускаем вниз, чтобы не обрезать голову */
@@ -173,7 +183,7 @@
 }
 
 .driver-card:hover .driver-image {
-    transform: translateY(70%) scale(1.05);
+    transform: translateY(70%) scale(1.03);
 }
 
 
@@ -207,18 +217,13 @@
 .driver-number-badge {
     font-size: 2.5rem;
     font-weight: 900;
-    /*background: rgba(255, 255, 255, 0.05);*/
     width: 70px;
     height: 70px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /*backdrop-filter: blur(5px);*/
-    /*border: 2px solid rgba(255, 255, 255, 0.3);*/
-    /*line-height: 1;*/
     text-align: center;
-
     color: #fff;
 }
 
@@ -388,7 +393,7 @@
 
 @media (max-width: 1024px) {
     .drivers-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
     }
 }
 
@@ -429,7 +434,7 @@
     }
 
     .driver-card {
-        min-height: 320px;
+        min-height: 256px;
     }
 }
 

@@ -19,9 +19,9 @@ export function createHeader() {
                 </a>
                 
                 <ul class="nav-links">
-                    <li><a href="../../pages/allDrivers/index.html" class="nav-link">Home</a></li>
+                    <li><a href="/index.html" class="nav-link">Home</a></li>
                     <li><a href="../../pages/allDrivers/index.html" class="nav-link">Drivers</a></li>
-                    <li><a href="/src/pages/teams/" class="nav-link">Teams</a></li>
+                    <li><a href="../../pages/allTeams/index.html" class="nav-link">Teams</a></li>
                     <li><a href="/src/pages/schedule/" class="nav-link">Schedule</a></li>
                     <li><a href="/src/pages/results/" class="nav-link">Results</a></li>
                 </ul>
@@ -44,23 +44,51 @@ export function createHeader() {
         mobileToggle.classList.toggle('active');
     });
 
-    // Highlight active page
+    setupMobileMenu(header);
     highlightActivePage(header);
 
     return header;
 }
 
+function setupMobileMenu(header) {
+    const mobileToggle = header.querySelector('.mobile-toggle');
+    const navLinks = header.querySelector('.nav-links');
+
+    mobileToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    header.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileToggle.classList.remove('active');
+        });
+    });
+}
+
 function highlightActivePage(header) {
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname.replace(/\/$/, '');
     const links = header.querySelectorAll('.nav-link');
 
     links.forEach(link => {
-        if (link.getAttribute('href') === currentPath ||
-            currentPath.includes(link.getAttribute('href')) && link.getAttribute('href') !== '/') {
+        const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '');
+
+        // если открыта конкретная страница
+        if (currentPath === linkPath) {
+            link.classList.add('active');
+        }
+        // если находимся в директории без index.html, а ссылка на index.html
+        else if (currentPath + '/index.html' === linkPath) {
             link.classList.add('active');
         }
     });
 }
+
+
+
+
 
 // Initialize header on page load
 export function initHeader() {

@@ -78,16 +78,15 @@ public class Team {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @Nullable
+
     @Column(name = "image_filename", length = 100)
     private String imageFilename;
 
-    @Nullable
     public String getImageFilename() {
         return imageFilename;
     }
 
-    public void setImageFilename(@Nullable String imageFilename) {
+    public void setImageFilename( String imageFilename) {
         this.imageFilename = imageFilename;
     }
 
