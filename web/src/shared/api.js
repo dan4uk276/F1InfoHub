@@ -27,6 +27,20 @@ export async function fetchDriverById(id) {
     return enhanceDriverData(data);
 }
 
+export async function fetchYoutubeVideosData() {
+    const data = await fetchData(`${API_CONFIG.baseUrl + API_CONFIG.endpoints.videos}`);
+    console.log(`Fetched videos data: `, data);
+    return sortVideosByDate(data);
+}
+
+function sortVideosByDate(videos) {
+    return videos.slice().sort((a, b) => {
+        const dateA = new Date(a.publishedAt);
+        const dateB = new Date(b.publishedAt);
+        return dateB - dateA; // новое видео первыми
+    });
+}
+
 function enhanceDriverData(driver) {
     return {
         ...driver,

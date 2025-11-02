@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="driverFullInfo.css">
 
     <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -78,7 +79,7 @@
     <!-- Related Content Section -->
     <section class="related-section">
         <div class="container">
-            <h2 class="section-title">Latest News & Videos</h2>
+            <h2 class="section-title">Latest Videos</h2>
             <div class="related-grid">
                 <!-- Related content will be injected by JS -->
             </div>
@@ -95,5 +96,19 @@
         </button>
     </div>
 </main>
+
+<!-- Video Modal -->
+<div class="video-modal-overlay" id="videoModal">
+    <div class="video-modal-content">
+        <button class="video-modal-close" id="videoModalClose">&times;</button>
+
+        <iframe id="videoModalIframe" width="100%" height="100%" frameborder="0"
+                allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
 </body>
 </html>

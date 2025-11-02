@@ -2,9 +2,10 @@ package com.safronov.formula.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
+@EnableScheduling
 public class F1InfoHubApplication {
 
 	public static void main(String[] args) {

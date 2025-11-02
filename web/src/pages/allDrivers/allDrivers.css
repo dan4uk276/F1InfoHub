@@ -153,10 +153,10 @@
     width: 100%;
     height: 100%;
     background: var(--driver-bg-image, no-repeat  center center);
-    background-size: auto, auto;
+    background-size: cover, cover;
     background-repeat: no-repeat, no-repeat;
     background-position: center center, center center;
-    opacity: 0.2; /* Регулируйте это значение (от 0.1 до 0.3) */
+    opacity: 0.2;
     z-index: 1;
 
 }

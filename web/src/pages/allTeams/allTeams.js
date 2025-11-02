@@ -139,7 +139,7 @@ function createTeamCard(team, index) {
     // </div>
 
     card.addEventListener('click', () => {
-        window.location.href = `../teamDetails/?id=${team.id}`;
+        window.location.href = `../teamFullInfo/?id=${team.id}`;
     });
 
     return card;

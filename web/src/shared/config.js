@@ -12,7 +12,8 @@ export const API_CONFIG = {
         allTeams: '/teams',
         teamById: '/teams/',
         schedule: '/schedule',
-        results: '/results'
+        results: '/results',
+        videos: '/videos'
     }
 };
 

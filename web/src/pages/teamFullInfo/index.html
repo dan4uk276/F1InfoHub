@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Details | Formula 1</title>
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../../styles/variables.css">
+    <link rel="stylesheet" href="../../styles/global.css">
+
+    <!-- Header Component Styles -->
+    <link rel="stylesheet" href="../../components/header/header.css">
+    <link rel="stylesheet" href="teamFullInfo.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Page Script -->
+    <script type="module" src="teamFullInfo.js"></script>
+
+</head>
+<body>
+
+<!-- Main Content -->
+<main class="team-profile">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-image-wrapper">
+                    <div class="hero-year-bg"></div>
+                    <picture>
+                        <img src="" alt="Team Car" class="hero-car-image">
+                    </picture>
+                </div>
+
+                <div class="hero-info">
+                    <div class="team-name-large"></div>
+                    <div class="team-base-info"></div>
+                    <div class="hero-quick-stats"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-tabs">
+                <button class="tab-btn active" data-tab="season">2024 Season</button>
+                <button class="tab-btn" data-tab="history">Team History</button>
+            </div>
+
+            <!-- Season Stats Tab -->
+            <div id="season-stats" class="tab-content active">
+                <div class="stats-grid"></div>
+            </div>
+
+            <!-- History Stats Tab -->
+            <div id="history-stats" class="tab-content">
+                <div class="stats-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drivers Section -->
+    <section class="drivers-section">
+        <div class="container">
+            <h2 class="section-title">Current Drivers</h2>
+            <div class="drivers-grid"></div>
+        </div>
+    </section>
+
+    <!-- Team Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-content">
+                <div class="profile-header">
+                    <h2>Team Profile</h2>
+                    <div class="profile-info-cards"></div>
+                </div>
+                <div class="profile-text"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back Button -->
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">
+            ← Back to Teams
+        </button>
+    </div>
+</main>
+
+<!-- Footer will be injected here -->
+<div id="footer-container"></div>
+
+<script type="module" src="teamFullInfo.js"></script>
+</body>
+</html>
