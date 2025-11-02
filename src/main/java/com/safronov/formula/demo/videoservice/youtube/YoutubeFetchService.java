@@ -38,13 +38,13 @@ public class YoutubeFetchService {
     private static final int MAX_VIDEOS_PER_FETCH = 50;
 
     // Official Formula 1 channel id (example)
-    private static final String F1_CHANNEL_ID = "UCB_qr75-ydFVKSF9Dmo6izg";
+    private static final String F1_CHANNEL_ID = "UCXQBAleLZGKLSfNrqsjDOyg";
 
     /**
      * Scheduled run: каждые 24 часа
      * Используй initialDelay чтобы не запускать сразу при старте приложения
      */
-    @Scheduled(fixedRate = 86400000, initialDelay = 10000) // 10 сек задержка после старта
+    @Scheduled(fixedRate = 86400000, initialDelay = 1000) // 10 сек задержка после старта
     public void scheduledFetch() {
         log.info("Starting scheduled YouTube video fetch...");
         try {

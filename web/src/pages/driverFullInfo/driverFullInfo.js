@@ -221,7 +221,7 @@ async function renderRelatedContent(driver) {
             <div class="carousel-wrapper">
                 <div class="related-grid">
                     ${relatedItems.map(item => `
-                        <div class="related-card" data-video-id="${item.videoId}">
+                        <div class="related-card" data-video-id="${item.id}">
                             <div class="related-card-image">
                                 <img src="${item.thumbnailUrl}"
                                      alt="${item.title}"
@@ -251,7 +251,6 @@ async function renderRelatedContent(driver) {
 function setupVideoModal() {
     const modal = document.getElementById('videoModal');
     const iframe = document.getElementById('videoModalIframe');
-    const closeBtn = document.getElementById('videoModalClose');
 
     // Открытие видео при клике на карточку
     document.querySelectorAll('.related-card').forEach(card => {
@@ -265,9 +264,6 @@ function setupVideoModal() {
             modal.classList.add('show');
         });
     });
-
-    // Закрытие по кнопке
-    closeBtn.addEventListener('click', closeModal);
 
     // Закрытие по клику вне видео
     modal.addEventListener('click', (e) => {
