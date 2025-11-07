@@ -21,17 +21,17 @@
         --redbull-dark: #001f4c;
         --redbull: linear-gradient(90deg,
         var(--redbull-primary) 0%,
-        var(--redbull-secondary) 30%,
+        var(--redbull-secondary) 50%,
         var(--redbull-dark) 70%
         );
 
         /* 🟢 MERCEDES-AMG PETRONAS F1 TEAM */
-        --mercedes-primary: #00d2be;
-        --mercedes-secondary: #00a896;
+        --mercedes-primary: #00ffe9;
+        --mercedes-secondary: #02a190;
         --mercedes-dark: #006a5e;
         --mercedes: linear-gradient(90deg,
         var(--mercedes-primary) 0%,
-        var(--mercedes-secondary) 30%,
+        var(--mercedes-secondary) 50%,
         var(--mercedes-dark) 70%
         );
 
@@ -41,7 +41,7 @@
         --ferrari-dark: #660000;
         --ferrari: linear-gradient(90deg,
         var(--ferrari-primary) 0%,
-        var(--ferrari-secondary) 30%,
+        var(--ferrari-secondary) 50%,
         var(--ferrari-dark) 70%
         );
 
@@ -51,7 +51,7 @@
         --mclaren-dark: #732c09;
         --mclaren: linear-gradient(90deg,
         var(--mclaren-primary) 0%,
-        var(--mclaren-secondary) 30%,
+        var(--mclaren-secondary) 50%,
         var(--mclaren-dark) 70%
         );
 
@@ -61,7 +61,7 @@
         --alpine-dark: #004c8f;
         --alpine: linear-gradient(90deg,
         var(--alpine-primary) 0%,
-        var(--alpine-secondary) 30%,
+        var(--alpine-secondary) 50%,
         var(--alpine-dark) 70%
         );
 
@@ -71,7 +71,7 @@
         --aston-martin-dark: #003630;
         --aston-martin: linear-gradient(90deg,
         var(--aston-martin-primary) 0%,
-        var(--aston-martin-secondary) 30%,
+        var(--aston-martin-secondary) 50%,
         var(--aston-martin-dark) 70%
         );
 
@@ -81,7 +81,7 @@
         --haas-dark: #3a3e42;
         --haas: linear-gradient(90deg,
         var(--haas-primary) 0%,
-        var(--haas-secondary) 30%,
+        var(--haas-secondary) 50%,
         var(--haas-dark) 70%
         );
 
@@ -91,7 +91,7 @@
         --rb-dark: #1c3b99;
         --rb: linear-gradient(90deg,
         var(--rb-primary) 0%,
-        var(--rb-secondary) 30%,
+        var(--rb-secondary) 50%,
         var(--rb-dark) 70%
         );
 
@@ -101,7 +101,7 @@
         --kick-sauber-dark: #166b16;
         --kick-sauber: linear-gradient(90deg,
         var(--kick-sauber-primary) 0%,
-        var(--kick-sauber-secondary) 30%,
+        var(--kick-sauber-secondary) 50%,
         var(--kick-sauber-dark) 70%
         );
 
@@ -111,7 +111,7 @@
         --williams-dark: #002255;
         --williams: linear-gradient(90deg,
         var(--williams-primary) 0%,
-        var(--williams-secondary) 30%,
+        var(--williams-secondary) 50%,
         var(--williams-dark) 70%
         );
 

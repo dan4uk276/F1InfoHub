@@ -1,0 +1,131 @@
+.stats-section {
+    background: var(--f1-dark);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-family: "Formula1 Display", sans-serif;
+}
+.stats-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    font-style: var(--font-display);
+    color: #ffffff;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+
+.season-title {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-style: var(--font-display);
+    color: #ffffff;
+    padding-bottom: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+}
+
+.season-stats .stat-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.summary-box .stat-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.statistics-label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #949498;
+    font-style: var(--font-display);
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.statistics-value {
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-style: var(--font-display);
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.stat-section-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+}
+
+
+.summary-box {
+    background-color: #2b2c36;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.summary-title {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-style: var(--font-display);
+}
+
+.button.summary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+.button.season {
+    color: var(--f1-gray);
+    border: 1.5px solid #ffffff;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+
+}
+
+.button.season:hover {
+    color: #ffffff;
+    background-color: #1a1d29;
+}
+
+.button.summary:hover {
+    background-color: #ffffff;
+    color: #1a1d29;
+}
+

@@ -1,0 +1,311 @@
+.hero-section {
+    position: relative;
+    max-width: 1400px;
+    overflow: hidden;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-image, no-repeat center center);
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center center;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.hero-section > * {
+    z-index: 2;
+}
+
+.hero-section.mclaren { background: var(--mclaren) }
+.hero-section.mercedes { background: var(--mercedes); }
+.hero-section.ferrari { background: var(--ferrari); }
+.hero-section.redbull { background: var(--redbull); }
+.hero-section.alpine { background: var(--alpine); }
+.hero-section.aston-martin { background: var(--aston-martin); }
+.hero-section.haas { background: var(--haas); }
+.hero-section.rb { background: var(--rb); }
+.hero-section.kick-sauber { background: var(--kick-sauber); }
+.hero-section.williams { background: var(--williams); }
+
+.hero-container {
+    position: relative;
+    align-items: center;   /* центр по вертикали */
+    justify-content: center; /* центр по горизонтали */ /* по вертикали */
+}
+
+.hero-content {
+    position: relative;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.hero-car-image {
+    position: relative;
+    bottom: 0;
+    width: 792px;
+    height: auto;
+    object-fit: cover;
+}
+
+.team-name-info {
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    width: 100%;
+    position: relative;
+}
+
+.team-name-large {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: clamp(1.3px, 0.3vw, 2px);
+    font-weight: 900;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.team-line-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+    position: relative;
+}
+
+.team-line {
+    height: clamp(10px, 2vw, 20px);
+    background: white;
+    position: relative;
+    border-radius: 2px;
+}
+
+/* Левые полоски */
+.team-line-wrapper.left .team-line.top {
+    width: 100%;
+    clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%);
+}
+
+.team-line-wrapper.left .team-line.bottom {
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%);
+}
+
+/* Правые полоски */
+.team-line-wrapper.right .team-line.top {
+    width: 100%;
+    clip-path: polygon(30px 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.team-line-wrapper.right .team-line.bottom {
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30px 100%);
+}
+
+.drivers {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.driver-name-info {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.driver-name-info:first-child {
+    text-align: right;
+}
+
+.driver-name-info:last-child {
+    text-align: left;
+}
+
+.divider {
+    width: 2px;
+    height: 1.2em;
+    background-color: #ffffff;
+    opacity: 0.6;
+    justify-self: center;
+}
+
+.team-logo-main {
+    text-align: center;/* расстояние между элементами */
+    display: flex;
+    justify-content: center; /* центрируем по горизонтали */
+    align-items: center;
+    backdrop-filter: blur(10px);
+    flex-shrink: 0;
+    padding-bottom: 2rem;
+}
+.team-logo-main picture {
+    align-items: center;
+}
+.team-logo-main img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+
+}
+
+.team-base-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--f1-red);
+}
+
+.base-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.base-info-label {
+    font-size: 0.85rem;
+    color: var(--f1-silver);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.base-info-value {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 700;
+}
+
+.hero-quick-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-lg);
+}
+
+.quick-stat {
+    text-align: center;
+}
+
+.quick-stat-value {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    display: block;
+    line-height: 1;
+}
+
+.quick-stat-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--f1-silver);
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+    .hero-car-image {
+        width: 560px;
+    }
+    .team-name-large {
+        font-size: 3rem;
+    }
+
+    .team-base-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero-car-image {
+        width: 396px
+    }
+
+    .team-name-large {
+        font-size: 2rem;
+    }
+
+    .hero-quick-stats {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .quick-stat {
+        flex: 1 1 calc(50% - 0.5rem);
+        min-width: 120px;
+    }
+
+    .drivers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-text {
+        padding: 2rem 1.5rem;
+    }
+
+    .profile-header h2 {
+        font-size: 2.5rem;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+
+    .hero-car-image {
+        width: 280px;
+    }
+    .team-name-large {
+        font-size: 1rem;
+    }
+
+    .stats-tabs {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .tab-btn {
+        padding: 1rem;
+    }
+
+    .hero-quick-stats {
+        flex-direction: column;
+    }
+}

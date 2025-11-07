@@ -17,14 +17,19 @@ async function fetchData(url) {
 
 export async function fetchAllDrivers() {
     const url = `${API_CONFIG.baseUrl}${API_CONFIG.endpoints.allDrivers}`;
-    return fetchData(url);
+    const drivers = await fetchData(url);
+
+    // Sort drivers by teamName (case-insensitive)
+    return drivers.sort((a, b) =>
+        a.teamName.localeCompare(b.teamName, undefined, { sensitivity: 'base' })
+    );
 }
 
 export async function fetchDriverById(id) {
     const url = `${API_CONFIG.baseUrl}${API_CONFIG.endpoints.driverById}${id}`;
     const data = await fetchData(url);
     console.log(`Driver info: `, data);
-    return enhanceDriverData(data);
+    return data;
 }
 
 export async function fetchYoutubeVideosData() {
@@ -34,43 +39,11 @@ export async function fetchYoutubeVideosData() {
 }
 
 function sortVideosByDate(videos) {
-    return videos.slice().sort((a, b) => {
+    return videos.sort((a, b) => {
         const dateA = new Date(a.publishedAt);
         const dateB = new Date(b.publishedAt);
         return dateB - dateA; // новое видео первыми
-    });
-}
-
-function enhanceDriverData(driver) {
-    return {
-        ...driver,
-        // Season Stats
-        seasonPosition: driver.seasonPosition || 'X',
-        seasonPoints: driver.seasonPoints || 'X',
-        gpRaces: driver.gpRaces || 'X',
-        gpPoints: driver.gpPoints || 'X',
-        gpWins: driver.gpWins || 'X',
-        gpPodiums: driver.gpPodiums || 'X',
-        gpPoles: driver.gpPoles || 'X',
-        gpTop10s: driver.gpTop10s || 'X',
-        fastestLaps: driver.fastestLaps || 'X',
-        dnfs: driver.dnfs || 'X',
-        sprintRaces: driver.sprintRaces || 'X',
-        sprintPoints: driver.sprintPoints || 'X',
-
-        // Career Stats
-        gpEntered: driver.gpEntered || 'X',
-        careerPoints: driver.careerPoints || 'X',
-        highestFinish: driver.highestFinish || 'X',
-        highestGrid: driver.highestGrid || 'X',
-        polePositions: driver.polePositions || 'X',
-        careerDnfs: driver.careerDnfs || 'X',
-
-        // Bio Info
-        quote: driver.quote || "I'M READY TO BRING THE FIGHT TO EVERYONE.",
-        dateOfBirth: driver.dateOfBirth || 'X',
-        placeOfBirth: driver.placeOfBirth || 'X'
-    };
+    }).slice(0,9);
 }
 
 export async function searchDriverByName(name) {
@@ -78,12 +51,14 @@ export async function searchDriverByName(name) {
     return fetchData(url);
 }
 
-export async function filterDriversByTeam(team) {
+export async function fetchDriversByTeam(team) {
     if (team === 'all') {
         return fetchAllDrivers();
     }
-    const url = `${API_CONFIG.baseUrl}${API_CONFIG.endpoints.filterByTeam}?teamName=${encodeURIComponent(team)}`;
-    return fetchData(url);
+    const url = `${API_CONFIG.baseUrl}${API_CONFIG.endpoints.filterByTeam}?team=${team}`;
+    const data = await fetchData(url);
+    console.log('Fetching team drivers...')
+    return data;
 }
 
 // Team API calls

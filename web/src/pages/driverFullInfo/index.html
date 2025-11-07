@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="../../components/header/header.css">
 
     <!-- Page Styles -->
-    <link rel="stylesheet" href="driverFullInfo.css">
+    <link rel="stylesheet" href="driverProfile.css">
+    <link rel="stylesheet" href="../../components/latestVideos/latestVideos.css">
+    <link rel="stylesheet" href="../../components/driverHeroSection/renderDriverHeroSection.css">
+    <link rel="stylesheet" href="../../components/statistics/statistics.css">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -22,42 +25,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
 
     <!-- Page Script -->
-    <script type="module" src="driverFullInfo.js"></script>
+    <script type="module" src="driverProfile.js"></script>
+    <script type="module" src="../../components/latestVideos/latestVideos.js"></script>
 </head>
 <body>
 <!-- Header will be injected here by JavaScript -->
 
 <main class="driver-profile">
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content">
-                <!-- Content will be injected by JS -->
-            </div>
+
+    <!-- Back Button -->
+    <div class="container">
+        <button class="back-button" onclick="window.location.href='../allDrivers/'">
+            ← Back to Drivers
+        </button>
+    </div>
+
+    <div class="container">
+        <div id="hero-placeholder"></div>
+    </div>
+
+
+    <section id="stats-section"></section>
+
+
+    <div class="container">
+        <div class="section-divider-wrapper">
+            <span class="section-divider top"></span>
+            <span class="section-divider bottom"></span>
         </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-tabs">
-                <button class="tab-btn active" data-tab="season">2025 Season</button>
-                <button class="tab-btn" data-tab="career">Career Stats</button>
-            </div>
-
-            <div class="tab-content active" id="season-stats">
-                <div class="stats-grid">
-                    <!-- Season stats will be injected by JS -->
-                </div>
-            </div>
-
-            <div class="tab-content" id="career-stats">
-                <div class="stats-grid">
-                    <!-- Career stats will be injected by JS -->
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Biography Section -->
     <section class="bio-section">
@@ -85,16 +82,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Back Button -->
-    <div class="container">
-        <button class="back-button" onclick="window.location.href='../allDrivers/'">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to All Drivers
-        </button>
-    </div>
 </main>
 
 <!-- Video Modal -->

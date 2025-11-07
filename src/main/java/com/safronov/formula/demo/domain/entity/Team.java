@@ -25,6 +25,7 @@ public class Team {
     @JsonManagedReference
     private List<Driver> drivers;
 
+    @Column
     private String base;
 
     @Column(name = "team_chief", length = 100)
@@ -33,6 +34,7 @@ public class Team {
     @Column(name = "technical_chief", length = 100)
     private String technicalChief;
 
+    @Column
     private String chassis;
 
     @Column(name = "power_unit", length = 100)
@@ -59,25 +61,20 @@ public class Team {
     @Column(name = "total_podiums")
     private Integer totalPodiums = 0;
 
-    @Column(name = "primary_color", length = 7)
-    private String primaryColor;
-
-    @Column(name = "secondary_color", length = 7)
-    private String secondaryColor;
-
+    @Column
     private String country;
 
     @Column(name = "logo_url", length = 500)
     private String logoUrl;
 
-    private Boolean active = true;
+    @Column
+    private String description;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
 
     @Column(name = "image_filename", length = 100)
     private String imageFilename;
@@ -210,22 +207,6 @@ public class Team {
         this.totalPodiums = totalPodiums;
     }
 
-    public String getPrimaryColor() {
-        return primaryColor;
-    }
-
-    public void setPrimaryColor(String primaryColor) {
-        this.primaryColor = primaryColor;
-    }
-
-    public String getSecondaryColor() {
-        return secondaryColor;
-    }
-
-    public void setSecondaryColor(String secondaryColor) {
-        this.secondaryColor = secondaryColor;
-    }
-
     public String getCountry() {
         return country;
     }
@@ -242,20 +223,20 @@ public class Team {
         this.logoUrl = logoUrl;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public List<Driver> getDrivers() {
         return drivers;
     }
 
     public void setDrivers(List<Driver> drivers) {
         this.drivers = drivers;
-    }
-
-    public Boolean getActive() {
-        return active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
     }
 
     public LocalDateTime getCreatedAt() {

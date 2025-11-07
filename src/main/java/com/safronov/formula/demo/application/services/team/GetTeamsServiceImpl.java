@@ -1,7 +1,9 @@
 package com.safronov.formula.demo.application.services.team;
 
-import com.safronov.formula.demo.application.mappers.TeamMapper;
-import com.safronov.formula.demo.domain.DTO.TeamCardDto;
+import com.safronov.formula.demo.application.mappers.DriverCardMapper;
+import com.safronov.formula.demo.application.mappers.TeamCardMapper;
+import com.safronov.formula.demo.domain.dto.DriverCardDto;
+import com.safronov.formula.demo.domain.dto.TeamCardDto;
 import com.safronov.formula.demo.domain.entity.Driver;
 import com.safronov.formula.demo.domain.entity.Team;
 import com.safronov.formula.demo.domain.interfaces.team.GetTeamsService;
@@ -11,28 +13,30 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
-
 @Service
 public class GetTeamsServiceImpl implements GetTeamsService {
 
     private final TeamRepository teamRepository;
     private final DriverRepository driverRepository;
-    private final TeamMapper teamMapper;
+    private final TeamCardMapper teamCardMapper;
+    private final DriverCardMapper driverCardMapper;
 
-    public GetTeamsServiceImpl(TeamRepository teamRepository, DriverRepository driverRepository, TeamMapper teamMapper) {
+    public GetTeamsServiceImpl(TeamRepository teamRepository, DriverRepository driverRepository, TeamCardMapper teamCardMapper, DriverCardMapper driverCardMapper) {
         this.teamRepository = teamRepository;
         this.driverRepository = driverRepository;
-        this.teamMapper = teamMapper;
+        this.teamCardMapper = teamCardMapper;
+        this.driverCardMapper = driverCardMapper;
     }
 
     @Override
     public List<TeamCardDto> get() {
-        return teamRepository.findAll().stream().map(this::mapToTeamCardDto).collect(toList());
+        return teamRepository.findAll().stream().map(this::mapToTeamCardDto).toList();
     }
 
     private TeamCardDto mapToTeamCardDto(Team team) {
-        List<Driver> drivers = driverRepository.findByTeamNameContaining(team.getName());
-        return teamMapper.mapToDTO(team, drivers.get(0), drivers.get(1));
+        List<Driver> drivers = driverRepository.findByTeamNameContainingIgnoreCase(team.getName());
+        DriverCardDto driver1 = driverCardMapper.mapToDTO(drivers.get(0));
+        DriverCardDto driver2 = driverCardMapper.mapToDTO(drivers.get(1));
+        return teamCardMapper.mapToDTO(team, driver1, driver2);
     }
 }

@@ -1,6 +1,6 @@
 package com.safronov.formula.demo.domain.interfaces.team;
 
-import com.safronov.formula.demo.domain.DTO.TeamCardDto;
+import com.safronov.formula.demo.domain.dto.TeamCardDto;
 
 import java.util.List;
 import java.util.function.Supplier;

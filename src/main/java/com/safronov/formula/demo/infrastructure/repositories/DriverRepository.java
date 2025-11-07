@@ -14,9 +14,11 @@ public interface DriverRepository extends JpaRepository<Driver,Integer> {
 
     List<Driver> findByNumber(Integer name);
 
-    @Query("SELECT d FROM Driver d WHERE LOWER(d.team.name) LIKE LOWER(CONCAT('%', :teamName, '%'))")
-    List<Driver> findByTeamNameContaining(@Param("teamName") String teamName);
+    List<Driver> findByTeamNameContainingIgnoreCase(@Param("teamName") String teamName);
 
     List<Driver> findByCountryContainingIgnoreCase(String country);
+
+    @Query("SELECT d FROM Driver d WHERE d.team IS NOT NULL")
+    List<Driver> findAllDrivers();
 
 }

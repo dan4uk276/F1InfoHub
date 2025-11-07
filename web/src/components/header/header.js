@@ -92,6 +92,13 @@ function highlightActivePage(header) {
 
 // Initialize header on page load
 export function initHeader() {
+
+    const existingHeader = document.querySelector('.f1-header');
+
+    if (existingHeader) {
+        console.warn('Header already exists, skipping...');
+        return;
+    }
     const header = createHeader();
     document.body.prepend(header);
 }

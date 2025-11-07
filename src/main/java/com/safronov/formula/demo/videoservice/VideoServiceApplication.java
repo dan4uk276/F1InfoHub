@@ -1,8 +1,6 @@
 package com.safronov.formula.demo.videoservice;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 public class VideoServiceApplication {

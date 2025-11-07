@@ -8,10 +8,15 @@ const teamClasses = {
     'Alpine': 'alpine',
     'Aston Martin': 'aston-martin',
     'Haas': 'haas',
-    'RB': 'rb',
+    'Racing Bulls': 'rb',
     'Kick Sauber': 'kick-sauber',
     'Williams': 'williams'
 };
+
+export const  StatType = {
+    DRIVER : 'DRIVER',
+    TEAM : 'TEAM'
+}
 
 // Get URL parameter by name
 export function getUrlParam(param) {

@@ -6,3 +6,8 @@ spring:
 youtube:
   api:
     key: ${YOUTUBE_API_KEY}
+  scheduler:
+    fetch-rate: 24h
+    initial-delay: 1s
+  video-fetch:
+    limit: 10

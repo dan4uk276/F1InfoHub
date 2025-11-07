@@ -10,7 +10,12 @@
 
     <!-- Header Component Styles -->
     <link rel="stylesheet" href="../../components/header/header.css">
-    <link rel="stylesheet" href="teamFullInfo.css">
+
+    <link rel="stylesheet" href="teamProfile.css">
+    <link rel="stylesheet" href="../../components/latestVideos/latestVideos.css">
+    <link rel="stylesheet" href="../../components/teamHeroSection/renderTeamHeroSection.css">
+    <link rel="stylesheet" href="../../components/driverCard/createDriverCard.css">
+    <link rel="stylesheet" href="../../components/statistics/statistics.css">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
 
     <!-- Page Script -->
-    <script type="module" src="teamFullInfo.js"></script>
+    <script type="module" src="teamProfile.js"></script>
 
 </head>
 <body>
@@ -26,52 +31,39 @@
 <!-- Main Content -->
 <main class="team-profile">
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-image-wrapper">
-                    <div class="hero-year-bg"></div>
-                    <picture>
-                        <img src="" alt="Team Car" class="hero-car-image">
-                    </picture>
-                </div>
+    <!-- Back Button -->
+    <div class="container">
+        <button class="back-button" onclick="window.location.href='../allTeams/'">
+            ← Back to Teams
+        </button>
+    </div>
 
-                <div class="hero-info">
-                    <div class="team-name-large"></div>
-                    <div class="team-base-info"></div>
-                    <div class="hero-quick-stats"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-tabs">
-                <button class="tab-btn active" data-tab="season">2024 Season</button>
-                <button class="tab-btn" data-tab="history">Team History</button>
-            </div>
-
-            <!-- Season Stats Tab -->
-            <div id="season-stats" class="tab-content active">
-                <div class="stats-grid"></div>
-            </div>
-
-            <!-- History Stats Tab -->
-            <div id="history-stats" class="tab-content">
-                <div class="stats-grid"></div>
-            </div>
-        </div>
-    </section>
+    <div id="hero-placeholder"></div>
 
     <!-- Drivers Section -->
     <section class="drivers-section">
         <div class="container">
-            <h2 class="section-title">Current Drivers</h2>
+            <h2 class="section-title">Drivers</h2>
             <div class="drivers-grid"></div>
         </div>
     </section>
+
+    <div class="container">
+        <div class="section-divider-wrapper">
+            <span class="section-divider top"></span>
+            <span class="section-divider bottom"></span>
+        </div>
+    </div>
+
+    <section id="stats-section"></section>
+
+
+    <div class="container">
+        <div class="section-divider-wrapper">
+            <span class="section-divider top"></span>
+            <span class="section-divider bottom"></span>
+        </div>
+    </div>
 
     <!-- Team Profile Section -->
     <section class="profile-section">
@@ -86,17 +78,26 @@
         </div>
     </section>
 
-    <!-- Back Button -->
-    <div class="container">
-        <button class="back-button" onclick="window.history.back()">
-            ← Back to Teams
-        </button>
+    <section class="related-section">
+        <div class="container">
+            <h2 class="section-title">Latest Videos</h2>
+            <div class="related-grid">
+                <!-- Related content will be injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <div class="video-modal-overlay" id="videoModal">
+        <div class="video-modal-content">
+            <iframe id="videoModalIframe" width="100%" height="100%" frameborder="0"
+                    allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"
+                    allowfullscreen>
+            </iframe>
+        </div>
     </div>
 </main>
 
 <!-- Footer will be injected here -->
 <div id="footer-container"></div>
-
-<script type="module" src="teamFullInfo.js"></script>
 </body>
 </html>

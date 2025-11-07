@@ -18,6 +18,6 @@ public class GetDriversByTeamServiceImpl implements GetDriversByTeamService {
 
     @Override
     public List<Driver> apply(String team) {
-        return driverRepository.findByTeamNameContaining(team);
+        return driverRepository.findByTeamNameContainingIgnoreCase(team);
     }
 }

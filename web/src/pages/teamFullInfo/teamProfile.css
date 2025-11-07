@@ -1,0 +1,156 @@
+/* src/pages/teamFullInfo/teamProfile.css */
+
+.team-profile {
+    padding: 0;
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    background: transparent;
+    border: none;
+    color: var(--f1-silver);
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--f1-red);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.tab-btn:hover {
+    color: white;
+}
+
+.tab-btn.active {
+    color: white;
+}
+
+.tab-btn.active::after {
+    transform: scaleX(1);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Drivers Section */
+.drivers-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    margin: 0 0 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/* Profile Section */
+.profile-section {
+    background: var(--f1-dark);
+    padding-top: 2rem;
+}
+
+.profile-header {
+    margin-bottom: 3rem;
+}
+
+.profile-header h2 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    margin: 0 0 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.profile-info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.profile-info-card {
+    padding-right: 3rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.profile-info-label {
+    font-size: 1rem;
+    color: var(--f1-silver);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.profile-info-value {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 700;
+}
+
+.profile-text {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.profile-text p {
+    margin-bottom: 1.5rem;
+    color: var(--f1-silver);
+}
+
+.profile-text p:first-of-type::first-letter {
+    font-size: 2rem;
+    font-weight: bold;
+    float: left;
+    line-height: 1;
+    color: var(--f1-red);
+}
+
+@media (max-width: 768px) {
+
+    .drivers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-text {
+        padding: 2rem 1.5rem;
+    }
+
+    .profile-header h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .tab-btn {
+        padding: 1rem;
+    }
+
+
+}

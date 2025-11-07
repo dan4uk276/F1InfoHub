@@ -2,6 +2,7 @@ package com.safronov.formula.demo.videoservice.controller;
 
 import com.safronov.formula.demo.videoservice.model.Video;
 import com.safronov.formula.demo.videoservice.repository.VideoRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +12,9 @@ import java.util.List;
 @CrossOrigin(origins = "*") // позволяет доступ другим микросервисам
 public class VideoController {
 
+    @Value("${youtube.video-fetch.limit}")
+    private int videoLimit;
+
     private final VideoRepository repo;
 
     public VideoController(VideoRepository repo) {
@@ -19,7 +23,10 @@ public class VideoController {
 
     @GetMapping
     public List<Video> getAllVideos() {
-        return repo.findAll();
+        return repo.findAll().stream()
+                            .sorted((o1, o2) -> o2.getPublishedAt()
+                                                  .compareTo(o1.getPublishedAt()))
+                            .limit(videoLimit).toList();
     }
 }
 
