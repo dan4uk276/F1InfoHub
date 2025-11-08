@@ -232,14 +232,14 @@
 
 .driver-name {
     font-size: clamp(1.3rem, 2.5vw, 1.6rem);
-    font-weight: 700;
+    font-family: 'f1-regular', sans-serif;
     line-height: 1.2;
     margin-bottom: 5px;
 }
 
 .driver-surname {
-    font-size: clamp(1.8rem, 3.5vw, 2.3rem);
-    font-weight: 900;
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    font-family: 'f1-bold-4', sans-serif;
     line-height: 1;
     margin-bottom: 15px;
 }
@@ -285,33 +285,6 @@
     object-fit: cover;
     object-position: center;
     display: block;
-}
-
-.stats {
-    display: flex;
-    gap: 15px;
-}
-
-.stat-item {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.25);
-    padding: 8px 12px;
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-}
-
-.stat-label {
-    font-size: 0.8rem;
-    opacity: 0.8;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.stat-value {
-    font-size: 1.1rem;
-    font-weight: 900;
-    margin-top: 2px;
 }
 
 @media (max-width: 1024px) {

@@ -1,59 +1,16 @@
-/* src/pages/teamFullInfo/teamProfile.css */
+/* src/pages/teamProfile/teamProfile.css */
 
 .team-profile {
     padding: 0;
 }
 
-.tab-btn {
-    padding: 1rem 2rem;
-    background: transparent;
-    border: none;
-    color: var(--f1-silver);
-    font-family: var(--font-primary);
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s;
-    position: relative;
-}
-
-.tab-btn::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--f1-red);
-    transform: scaleX(0);
-    transition: transform 0.3s;
-}
-
-.tab-btn:hover {
-    color: white;
-}
-
-.tab-btn.active {
-    color: white;
-}
-
-.tab-btn.active::after {
-    transform: scaleX(1);
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
-
 /* Drivers Section */
 .drivers-section {
-    padding-top: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.drivers-section .section-title {
     padding-bottom: 2rem;
 }
 
@@ -77,7 +34,7 @@
 }
 
 .profile-header h2 {
-    font-family: var(--font-display);
+    font-family: "f1-black", sans-serif;
     font-size: 3rem;
     margin: 0 0 2rem 0;
     text-transform: uppercase;
@@ -97,7 +54,7 @@
 }
 
 .profile-info-label {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--f1-silver);
     text-transform: uppercase;
     margin-bottom: 0.5rem;
@@ -105,7 +62,7 @@
 }
 
 .profile-info-value {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: white;
     font-weight: 700;
 }
@@ -114,21 +71,12 @@
     background: rgba(255, 255, 255, 0.03);
     padding: 3rem;
     border-radius: var(--radius-lg);
-    line-height: 1.8;
-    font-size: 1.1rem;
+    font-size: 1.8rem;
 }
 
 .profile-text p {
     margin-bottom: 1.5rem;
-    color: var(--f1-silver);
-}
-
-.profile-text p:first-of-type::first-letter {
-    font-size: 2rem;
-    font-weight: bold;
-    float: left;
-    line-height: 1;
-    color: var(--f1-red);
+    color: var(--f1-white);
 }
 
 @media (max-width: 768px) {
@@ -144,13 +92,4 @@
     .profile-header h2 {
         font-size: 2.5rem;
     }
-}
-
-@media (max-width: 480px) {
-
-    .tab-btn {
-        padding: 1rem;
-    }
-
-
 }

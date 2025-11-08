@@ -9,16 +9,22 @@ public class DriverStatsMapperImpl implements DriverStatsMapper {
     @Override
     public DriverSeasonStatsDto mapToDTO(DriverStats driverStats) {
         return new DriverSeasonStatsDto(
-                driverStats.getDriverName(),
                 driverStats.getWdcPosition(),
                 driverStats.getSeasonPoints(),
+                driverStats.getGrandPrixPoints(),
                 driverStats.getGrandPrixRaces(),
                 driverStats.getGrandPrixWins(),
                 driverStats.getGrandPrixPodiums(),
                 driverStats.getGrandPrixPoles(),
                 driverStats.getGrandPrixTop10s(),
                 driverStats.getDhlFastestLaps(),
-                driverStats.getDnfs()
+                driverStats.getDnfs(),
+                driverStats.getSprintRaces(),
+                driverStats.getSprintPoints(),
+                driverStats.getSprintWins(),
+                driverStats.getSprintPodiums(),
+                driverStats.getSprintPoles(),
+                driverStats.getSprintTop10s()
         );
     }
 }

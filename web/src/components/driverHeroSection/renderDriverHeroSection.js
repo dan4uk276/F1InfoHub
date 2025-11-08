@@ -38,25 +38,8 @@ export function renderDriverHeroSection(driver) {
             <div class="driver-team-badge">
                 ${driver.teamName}
             </div>
-            <h1 class="driver-name-large">${driver.name}</h1>
-            
-            
-            ${driver.quote ? `<blockquote class="driver-quote">"${driver.quote}"</blockquote>` : ''}
-            
-            <div class="hero-quick-stats">
-                <div class="quick-stat">
-                    <span class="quick-stat-value">${driver.wdc}</span>
-                    <span class="quick-stat-label">Championships</span>
-                </div>
-                <div class="quick-stat">
-                    <span class="quick-stat-value">${driver.raceWins || '0'}</span>
-                    <span class="quick-stat-label">Wins</span>
-                </div>
-                <div class="quick-stat">
-                    <span class="quick-stat-value">${driver.podiums}</span>
-                    <span class="quick-stat-label">Podiums</span>
-                </div>
-            </div>
+            <h1 class="driver-name-large">${driver.name}</h1>    
+            <blockquote class="driver-quote">"${driver.quote}"</blockquote>
         </div>
     `;
 

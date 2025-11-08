@@ -79,13 +79,12 @@
 }
 
 .team-name-large {
-    font-family: var(--font-display);
-    font-size: 4rem;
+    font-family: 'f1-black', sans-serif;
+    font-size: 3rem;
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: clamp(1.3px, 0.3vw, 2px);
-    font-weight: 900;
     white-space: nowrap;
     z-index: 2;
 }
@@ -179,65 +178,9 @@
 
 }
 
-.team-base-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: var(--radius-lg);
-    border-left: 4px solid var(--f1-red);
-}
 
-.base-info-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
 
-.base-info-label {
-    font-size: 0.85rem;
-    color: var(--f1-silver);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
 
-.base-info-value {
-    font-size: 1.2rem;
-    color: white;
-    font-weight: 700;
-}
-
-.hero-quick-stats {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-    margin-top: 2rem;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: var(--radius-lg);
-}
-
-.quick-stat {
-    text-align: center;
-}
-
-.quick-stat-value {
-    font-family: var(--font-display);
-    font-size: 3.5rem;
-    display: block;
-    line-height: 1;
-}
-
-.quick-stat-label {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--f1-silver);
-    margin-top: 0.5rem;
-}
 
 @media (max-width: 1024px) {
     .hero-car-image {

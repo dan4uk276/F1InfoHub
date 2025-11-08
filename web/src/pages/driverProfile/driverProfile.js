@@ -1,4 +1,4 @@
-// src/pages/driverFullInfo/driverProfile.js
+// src/pages/driverProfile/driverProfile.js
 
 import { API_CONFIG } from '../../shared/config.js';
 import { initHeader } from '../../components/header/header.js';
@@ -25,7 +25,6 @@ async function init() {
         const driver = await fetchDriverById(driverId);
 
         await renderDriverProfile(driver);
-        setupTabs();
         updatePageTitle(driver.name);
     } catch (error) {
         console.error('Error loading driver:', error);
@@ -52,22 +51,22 @@ async function renderDriverProfile(driver) {
 function renderStats(driver) {
 
     const seasonStats = [
-        { label: 'Season Position', value: driver.driverSeasonStats.seasonPosition || 'N/A', highlight: true },
+        { label: 'Season Position', value: driver.driverSeasonStats.seasonPosition},
         { label: 'Season Points', value: driver.driverSeasonStats.seasonPoints},
         { label: 'Grand Prix Races', value: driver.driverSeasonStats.gpRaces},
-        { label: 'Grand Prix Points', value: driver.driverSeasonStats.seasonPoints},
+        { label: 'Grand Prix Points', value: driver.driverSeasonStats.gpPoints},
         { label: 'Grand Prix Wins', value: driver.driverSeasonStats.gpWins},
         { label: 'Grand Prix Podiums', value: driver.driverSeasonStats.gpPodiums},
         { label: 'Grand Prix Poles', value: driver.driverSeasonStats.gpPoles},
         { label: 'Grand Prix Top 10s', value: driver.driverSeasonStats.gpTop10s},
         { label: 'DHL Fastest Laps', value: driver.driverSeasonStats.dhlFastestLaps},
         { label: 'DNFs', value: driver.driverSeasonStats.dnfs},
-        { label: 'Sprint Races', value: driver.driverSeasonStats.sprintRaces || 'N/A' },
-        { label: 'Sprint Points', value: driver.driverSeasonStats.sprintPoints || 'N/A' },
-        { label: 'Sprint Wins', value: driver.driverSeasonStats.sprintWins || 'N/A' },
-        { label: 'Sprint Podiums', value: driver.driverSeasonStats.sprintPodiums || 'N/A' },
-        { label: 'Sprint Poles', value: driver.driverSeasonStats.sprintPoles || 'N/A' },
-        { label: 'Sprint Top 10s', value: driver.driverSeasonStats.sprintTop10s || 'N/A' }
+        { label: 'Sprint Races', value: driver.driverSeasonStats.sprintRaces},
+        { label: 'Sprint Points', value: driver.driverSeasonStats.sprintPoints},
+        { label: 'Sprint Wins', value: driver.driverSeasonStats.sprintWins},
+        { label: 'Sprint Podiums', value: driver.driverSeasonStats.sprintPodiums},
+        { label: 'Sprint Poles', value: driver.driverSeasonStats.sprintPoles},
+        { label: 'Sprint Top 10s', value: driver.driverSeasonStats.sprintTop10s}
     ];
 
     const careerStats = [
@@ -126,26 +125,6 @@ function formatBiography(bioText) {
         const text = para.trim().endsWith('.') ? para.trim() : para.trim() + '.';
         return `<p>${text}</p>`;
     }).join('');
-}
-
-// Setup tabs functionality
-function setupTabs() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const tabName = button.getAttribute('data-tab');
-
-            // Remove active class from all tabs
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-
-            // Add active class to clicked tab
-            button.classList.add('active');
-            document.getElementById(`${tabName}-stats`).classList.add('active');
-        });
-    });
 }
 
 

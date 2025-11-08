@@ -3,6 +3,11 @@
     color: var(--f1-silver);
     margin-top: 0.5rem;
     font-weight: 400;
+    font-family: 'f1-regular', sans-serif;
+}
+
+.page-header h1{
+    font-family: 'f1-black', sans-serif;
 }
 
 /* Filters Section */
@@ -26,7 +31,7 @@
     border: 2px solid transparent;
     border-radius: var(--radius-md);
     color: white;
-    font-family: var(--font-primary);
+    font-family: 'f1-regular', sans-serif;
     font-size: 1rem;
     transition: all var(--transition-speed);
 }
@@ -56,7 +61,7 @@
     border: 2px solid transparent;
     border-radius: var(--radius-md);
     color: white;
-    font-family: var(--font-primary);
+    font-family: 'f1-regular', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;

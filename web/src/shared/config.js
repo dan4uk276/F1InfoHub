@@ -25,7 +25,7 @@ export const CACHE_CONFIG = {
 export const ROUTES = {
     home: '/',
     allDrivers: '/src/pages/allDrivers/',
-    driverDetails: '/src/pages/driverFullInfo/',
+    driverDetails: '/src/pages/driverProfile/',
     teams: '/src/pages/teams/',
     schedule: '/src/pages/schedule/',
     results: '/src/pages/results/'

@@ -1,0 +1,65 @@
+/* src/pages/driverProfile/driverProfile.css */
+
+.driver-profile {
+    padding: 0;
+}
+
+/* Biography Section */
+.bio-section {
+    padding-top: 2rem;
+}
+
+.bio-header {
+    margin-bottom: 3rem;
+}
+
+.bio-header h2 {
+    font-family: 'f1-black', sans-serif;
+    font-size: 3rem;
+    margin: 0 0 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.bio-info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.bio-info-card {
+    padding-top: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-radius: var(--radius-md);
+}
+
+.bio-info-label {
+    font-size: 1.2rem;
+    color: var(--f1-silver);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.bio-info-value {
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+}
+
+.bio-text {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+
+    font-size: 1.8rem;
+}
+
+.bio-text p {
+    margin-bottom: 1.5rem;
+    color: var(--f1-white);
+}
+
+
+

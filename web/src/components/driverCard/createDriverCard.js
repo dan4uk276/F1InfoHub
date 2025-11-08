@@ -55,21 +55,11 @@ export function createDriverCard(driver, index) {
             <div class="flag">
                 <img src="https://flagsapi.com/${getCountryFlag(driver.country)}/flat/64.png">
             </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-label">Points</div>
-                    <div class="stat-value">${Math.round(driver.points) || 0}</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">Podiums</div>
-                    <div class="stat-value">${driver.podiums || 0}</div>
-                </div>
-            </div>
         </div>
     `;
 
     card.addEventListener('click', () => {
-        window.location.href = `../driverFullInfo/?id=${driver.id}`;
+        window.location.href = `../driverProfile/?id=${driver.id}`;
     });
 
     return card;

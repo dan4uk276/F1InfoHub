@@ -1,4 +1,4 @@
-// src/pages/teamFullInfo/teamProfile.js
+// src/pages/teamProfile/teamProfile.js
 
 import { API_CONFIG } from '../../shared/config.js';
 import { initHeader } from '../../components/header/header.js';
@@ -34,7 +34,6 @@ async function init() {
         console.log('Team Drivers:', team.drivers);
 
         await renderTeamProfile(team, team.drivers);
-        setupTabs();
         updatePageTitle(team.name);
     } catch (error) {
         console.error('Error loading team:', error);
@@ -158,28 +157,6 @@ function formatProfile(profileText) {
     return paragraphs.map(para => `<p>${para.trim()}</p>`).join('');
 }
 
-// Setup tabs functionality
-function setupTabs() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const tabName = button.getAttribute('data-tab');
-
-            // Remove active class from all tabs
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-
-            // Add active class to clicked tab
-            button.classList.add('active');
-            const targetTab = document.getElementById(`${tabName}-stats`);
-            if (targetTab) {
-                targetTab.classList.add('active');
-            }
-        });
-    });
-}
 
 // Start the app
 document.addEventListener('DOMContentLoaded', () => {

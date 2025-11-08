@@ -1,7 +1,6 @@
 .hero-section {
     position: relative;
     overflow: hidden;
-
 }
 
 .hero-section::after {
@@ -23,7 +22,79 @@
     z-index: 2;
 }
 
-.hero-section.mclaren { background: var(--mclaren) }
+.hero-container {
+    max-width: 1400px;
+    min-height: 500px;
+    position: relative;
+
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+}
+
+.hero-image-wrapper {
+    position: relative;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-driver-image {
+    transform: translateX(20%);
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+}
+
+
+.hero-number-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-primary);
+    font-size: clamp(20rem, 40vw, 40rem);
+    font-weight: bold;
+    opacity: 0.3;
+    line-height: 1;
+    z-index: 0;
+}
+
+.hero-info {
+    padding: 2rem;
+    z-index: 2;
+}
+
+.driver-team-badge {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.driver-name-large {
+    font-family: 'f1-regular', sans-serif;
+    font-size: 3rem;
+    line-height: 1;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.driver-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--f1-silver);
+    margin: 1rem 0;
+    border-left: 4px solid var(--f1-red);
+    padding-left: 1rem;
+}
+
+/* team background colors */
+.hero-section.mclaren { background: var(--mclaren); }
 .hero-section.mercedes { background: var(--mercedes); }
 .hero-section.ferrari { background: var(--ferrari); }
 .hero-section.redbull { background: var(--redbull); }
@@ -33,102 +104,3 @@
 .hero-section.rb { background: var(--rb); }
 .hero-section.kick-sauber { background: var(--kick-sauber); }
 .hero-section.williams { background: var(--williams); }
-
-.hero-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-}
-
-.hero-image-wrapper {
-    position: relative;
-    height: 70%;
-}
-
-.hero-driver-image {
-    position: absolute;
-    bottom: auto;
-    left: 50%;
-    transform: translate(-50%, -5%);
-    width: auto;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
-}
-
-.hero-number-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-primary);
-    font-size: clamp(20rem, 50vw, 40rem);
-    font-weight: bold;
-    opacity: 0.3;
-    line-height: 1;
-    z-index: 0;
-}
-
-.hero-info {
-    padding: 2rem 2rem;
-    z-index: 2;
-    border-radius: 50px;
-}
-
-.driver-team-badge {
-    display: inline-block;
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.driver-name-large {
-    font-family: var(--font-display);
-    font-size: 5rem;
-    line-height: 0.9;
-    margin: 0 0 1rem 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.driver-quote {
-    font-size: 2rem;
-    font-style: italic;
-    color: var(--f1-silver);
-    margin: 1rem 0;
-    padding-left: 2rem;
-    border-left: 4px solid var(--f1-red);
-}
-
-.hero-quick-stats {
-    display: flex;
-    justify-content: center; /* по горизонтали */
-    align-items: center;
-    gap: 2rem;
-    margin-top: 1rem;
-}
-
-.quick-stat {
-    text-align: center;
-}
-
-.quick-stat-value {
-    font-family: var(--font-display);
-    font-size: 4rem;
-
-    display: block;
-}
-
-.quick-stat-label {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--f1-silver);
-}

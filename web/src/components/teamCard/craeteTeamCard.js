@@ -85,7 +85,7 @@ export function createTeamCard(team, index) {
     `;
 
     card.addEventListener('click', () => {
-        window.location.href = `../teamFullInfo/?id=${team.id}`;
+        window.location.href = `../teamProfile/?id=${team.id}`;
     });
 
     return card;

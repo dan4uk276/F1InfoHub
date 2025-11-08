@@ -131,13 +131,13 @@ main {
     border: none;
     border-radius: 16px;
     font-family: var(--font-primary);
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s;
-    margin: 0.5rem 0;
+    margin: 1rem;
 }
 
 .back-button:hover {
@@ -148,4 +148,46 @@ main {
     .page-header h1 {
         font-size: 2rem;
     }
+}
+
+@font-face {
+    font-family: 'f1-black';
+    src: url('../assets/fonts/Formula1-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'f1-bold-web';
+    src: url('../assets/fonts/Formula1-Bold_web.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'f1-bold-4';
+    src: url('../assets/fonts/Formula1-Bold-4.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'f1-italic';
+    src: url('../assets/fonts/Formula1-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'f1-regular';
+    src: url('../assets/fonts/Formula1-Regular-1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'f1-wide';
+    src: url('../assets/fonts/Formula1-Wide.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }

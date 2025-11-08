@@ -12,10 +12,6 @@ public class DriverStats {
     @Column(name = "driver_id")
     private Long driverId;
 
-    @Size(max = 255)
-    @Column(name = "driver_name")
-    private String driverName;
-
     @Column(name = "season_points")
     private Long seasonPoints;
 
@@ -37,14 +33,32 @@ public class DriverStats {
     @Column(name = "grand_prix_poles")
     private Long grandPrixPoles;
 
-    @Column(name = "grand_prix_top10s")
+    @Column(name = "grand_prix_top_10s")
     private Long grandPrixTop10s;
 
-    @Column(name = "dhl_fastest_laps")
+    @Column(name = "fastest_laps")
     private Long dhlFastestLaps;
 
     @Column(name = "dnfs")
     private Long dnfs;
+
+    @Column(name = "sprint_races")
+    private Long sprintRaces;
+
+    @Column(name = "sprint_points")
+    private Long sprintPoints;
+
+    @Column(name = "sprint_wins")
+    private Long sprintWins;
+
+    @Column(name = "sprint_podiums")
+    private Long sprintPodiums;
+
+    @Column(name = "sprint_poles")
+    private Long sprintPoles;
+
+    @Column(name = "sprint_top_10s")
+    private Long sprintTop10s;
 
     public Long getDriverId() {
         return driverId;
@@ -52,14 +66,6 @@ public class DriverStats {
 
     public void setDriverId(Long driverId) {
         this.driverId = driverId;
-    }
-
-    public String getDriverName() {
-        return driverName;
-    }
-
-    public void setDriverName(String driverName) {
-        this.driverName = driverName;
     }
 
     public Long getWdcPosition() {
@@ -140,5 +146,53 @@ public class DriverStats {
 
     public void setDnfs(Long dnfs) {
         this.dnfs = dnfs;
+    }
+
+    public Long getSprintRaces() {
+        return sprintRaces;
+    }
+
+    public void setSprintRaces(Long sprintRaces) {
+        this.sprintRaces = sprintRaces;
+    }
+
+    public Long getSprintPoints() {
+        return sprintPoints;
+    }
+
+    public void setSprintPoints(Long sprintPoints) {
+        this.sprintPoints = sprintPoints;
+    }
+
+    public Long getSprintWins() {
+        return sprintWins;
+    }
+
+    public void setSprintWins(Long sprintWins) {
+        this.sprintWins = sprintWins;
+    }
+
+    public Long getSprintPodiums() {
+        return sprintPodiums;
+    }
+
+    public void setSprintPodiums(Long sprintPodiums) {
+        this.sprintPodiums = sprintPodiums;
+    }
+
+    public Long getSprintPoles() {
+        return sprintPoles;
+    }
+
+    public void setSprintPoles(Long sprintPoles) {
+        this.sprintPoles = sprintPoles;
+    }
+
+    public Long getSprintTop10s() {
+        return sprintTop10s;
+    }
+
+    public void setSprintTop10s(Long sprintTop10s) {
+        this.sprintTop10s = sprintTop10s;
     }
 }
