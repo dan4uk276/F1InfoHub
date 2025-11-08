@@ -1,12 +1,11 @@
 package com.safronov.formula.demo.domain.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
 
 
 @Entity
 @Table(name = "driver_stats_2025")
-public class DriverStats {
+public class DriverStat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "driver_id")

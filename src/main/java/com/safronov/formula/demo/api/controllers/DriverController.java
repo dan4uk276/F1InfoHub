@@ -1,6 +1,6 @@
 package com.safronov.formula.demo.api.controllers;
-import com.safronov.formula.demo.domain.dto.DriverCardDto;
-import com.safronov.formula.demo.domain.dto.DriverProfileDto;
+import com.safronov.formula.demo.domain.dto.DriverCard;
+import com.safronov.formula.demo.domain.dto.DriverProfile;
 import com.safronov.formula.demo.domain.entity.Driver;
 import com.safronov.formula.demo.domain.interfaces.driver.*;
 import org.springframework.http.ResponseEntity;
@@ -35,14 +35,14 @@ public class DriverController {
     }
 
     @GetMapping("/{id}")
-    public @ResponseBody ResponseEntity<DriverProfileDto> getDriverById(@PathVariable  Integer id) {
+    public @ResponseBody ResponseEntity<DriverProfile> getDriverById(@PathVariable  Integer id) {
          return getDriverByIdService.getDriverById(id)
                          .map(ResponseEntity::ok)
                          .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping
-    public @ResponseBody List<DriverCardDto> getDrivers() {
+    public @ResponseBody List<DriverCard> getDrivers() {
 
         return getDriversService.get();
     }

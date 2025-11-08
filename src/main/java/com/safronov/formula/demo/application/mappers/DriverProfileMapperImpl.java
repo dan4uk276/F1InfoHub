@@ -1,15 +1,15 @@
 package com.safronov.formula.demo.application.mappers;
 
-import com.safronov.formula.demo.domain.dto.DriverProfileDto;
-import com.safronov.formula.demo.domain.dto.DriverSeasonStatsDto;
+import com.safronov.formula.demo.domain.dto.DriverProfile;
+import com.safronov.formula.demo.domain.dto.DriverSeasonStat;
 import com.safronov.formula.demo.domain.entity.Driver;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DriverProfileMapperImpl implements DriverProfileMapper {
     @Override
-    public DriverProfileDto mapToDTO(Driver driver, DriverSeasonStatsDto driverSeasonStatsDto) {
-        return new  DriverProfileDto (
+    public DriverProfile mapToDTO(Driver driver, DriverSeasonStat driverSeasonStat) {
+        return new DriverProfile(
                 driver.getName(),
                 driver.getNumber(),
                 driver.getTeamName(),
@@ -25,7 +25,7 @@ public class DriverProfileMapperImpl implements DriverProfileMapper {
                 driver.getPlaceOfBirth(),
                 driver.getBiography(),
                 driver.getQuote(),
-                driverSeasonStatsDto
+                driverSeasonStat
         );
     }
 }

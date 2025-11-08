@@ -1,0 +1,67 @@
+<svg viewBox="0 0 720 316" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="halftoneGrad" cx="15%" cy="50%">
+      <stop offset="0%" style="stop-color:#000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fff;stop-opacity:0.05" />
+    </radialGradient>
+
+    <!-- Паттерны точек разного размера -->
+    <pattern id="dots1" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="0.4" fill="#000"/>
+    </pattern>
+
+    <pattern id="dots2" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="0.8" fill="#000"/>
+    </pattern>
+
+    <pattern id="dots3" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.2" fill="#000"/>
+    </pattern>
+
+    <pattern id="dots4" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.6" fill="#000"/>
+    </pattern>
+
+    <pattern id="dots5" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#000"/>
+    </pattern>
+
+    <pattern id="dots6" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.4" fill="#000"/>
+    </pattern>
+
+    <pattern id="dots7" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.8" fill="#000"/>
+    </pattern>
+
+    <!-- Градиенты -->
+    <linearGradient id="redAccent" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" style="stop-color:#dc0000;stop-opacity:0.4" />
+      <stop offset="50%" style="stop-color:#dc0000;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#dc0000;stop-opacity:0" />
+    </linearGradient>
+
+    <linearGradient id="darkEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#000;stop-opacity:0" />
+    </linearGradient>
+
+    <linearGradient id="bottomEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000;stop-opacity:0" />
+      <stop offset="100%" style="stop-color:#000;stop-opacity:0.15" />
+    </linearGradient>
+  </defs>
+
+  <!-- Базовый светлый фон -->
+  <rect width="720" height="316" fill="#f8f8f8"/>
+
+  <!-- Диагональные слои с точками разного размера и плавными переходами -->
+  <g transform="rotate(-8 360 158)">
+    <rect x="250" y="-50" width="220" height="450" fill="url(#dots1)"/>
+    <rect x="470" y="-50" width="180" height="450" fill="url(#dots2)" opacity="0.9"/>
+    <rect x="650" y="-50" width="160" height="450" fill="url(#dots3)" opacity="0.85"/>
+  </g>
+
+
+
+</svg>

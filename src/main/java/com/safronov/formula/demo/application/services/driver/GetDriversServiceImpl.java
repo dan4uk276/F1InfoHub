@@ -1,7 +1,7 @@
 package com.safronov.formula.demo.application.services.driver;
 
 import com.safronov.formula.demo.application.mappers.DriverCardMapper;
-import com.safronov.formula.demo.domain.dto.DriverCardDto;
+import com.safronov.formula.demo.domain.dto.DriverCard;
 import com.safronov.formula.demo.domain.interfaces.driver.GetDriversService;
 import com.safronov.formula.demo.infrastructure.repositories.DriverRepository;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class GetDriversServiceImpl implements GetDriversService {
     }
 
     @Override
-    public List<DriverCardDto> get() {
+    public List<DriverCard> get() {
         return driverRepository.findAllDrivers().stream().map(driverCardMapper::mapToDTO).toList();
     }
 }

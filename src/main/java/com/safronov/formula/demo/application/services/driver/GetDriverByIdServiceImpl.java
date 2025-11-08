@@ -1,10 +1,10 @@
 package com.safronov.formula.demo.application.services.driver;
 
 import com.safronov.formula.demo.application.mappers.DriverProfileMapper;
-import com.safronov.formula.demo.domain.dto.DriverProfileDto;
-import com.safronov.formula.demo.domain.dto.DriverSeasonStatsDto;
+import com.safronov.formula.demo.domain.dto.DriverProfile;
+import com.safronov.formula.demo.domain.dto.DriverSeasonStat;
 import com.safronov.formula.demo.domain.interfaces.driver.GetDriverByIdService;
-import com.safronov.formula.demo.domain.interfaces.driverStats.GetDriverStatService;
+import com.safronov.formula.demo.domain.interfaces.driverStat.GetDriverStatService;
 import com.safronov.formula.demo.infrastructure.repositories.DriverRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
@@ -25,13 +25,13 @@ public class GetDriverByIdServiceImpl implements GetDriverByIdService {
     }
 
     @Override
-    public Optional<DriverProfileDto> getDriverById(Integer id) {
+    public Optional<DriverProfile> getDriverById(Integer id) {
         return driverRepository.findById(id)
                 .stream()
                 .map(driver -> {
-                    DriverSeasonStatsDto driverSeasonStatsDto = getDriverStatService.getById(id)
-                            .orElseThrow(() -> new EntityNotFoundException("User not found"));
-                    return driverProfileMapper.mapToDTO(driver, driverSeasonStatsDto);
+                    DriverSeasonStat driverSeasonStat = getDriverStatService.getById(id)
+                            .orElseThrow(() -> new EntityNotFoundException("Driver not found"));
+                    return driverProfileMapper.mapToDTO(driver, driverSeasonStat);
                 }).findFirst();
     }
 }

@@ -2,8 +2,8 @@ package com.safronov.formula.demo.application.services.team;
 
 import com.safronov.formula.demo.application.mappers.DriverCardMapper;
 import com.safronov.formula.demo.application.mappers.TeamCardMapper;
-import com.safronov.formula.demo.domain.dto.DriverCardDto;
-import com.safronov.formula.demo.domain.dto.TeamCardDto;
+import com.safronov.formula.demo.domain.dto.DriverCard;
+import com.safronov.formula.demo.domain.dto.TeamCard;
 import com.safronov.formula.demo.domain.entity.Driver;
 import com.safronov.formula.demo.domain.entity.Team;
 import com.safronov.formula.demo.domain.interfaces.team.GetTeamsService;
@@ -29,14 +29,14 @@ public class GetTeamsServiceImpl implements GetTeamsService {
     }
 
     @Override
-    public List<TeamCardDto> get() {
+    public List<TeamCard> get() {
         return teamRepository.findAll().stream().map(this::mapToTeamCardDto).toList();
     }
 
-    private TeamCardDto mapToTeamCardDto(Team team) {
+    private TeamCard mapToTeamCardDto(Team team) {
         List<Driver> drivers = driverRepository.findByTeamNameContainingIgnoreCase(team.getName());
-        DriverCardDto driver1 = driverCardMapper.mapToDTO(drivers.get(0));
-        DriverCardDto driver2 = driverCardMapper.mapToDTO(drivers.get(1));
+        DriverCard driver1 = driverCardMapper.mapToDTO(drivers.get(0));
+        DriverCard driver2 = driverCardMapper.mapToDTO(drivers.get(1));
         return teamCardMapper.mapToDTO(team, driver1, driver2);
     }
 }

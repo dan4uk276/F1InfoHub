@@ -1,9 +1,9 @@
 package com.safronov.formula.demo.domain.interfaces.team;
 
-import com.safronov.formula.demo.domain.dto.TeamProfileDto;
+import com.safronov.formula.demo.domain.dto.TeamProfile;
 
 import java.util.Optional;
 
 public interface GetTeamByIdService{
-    Optional<TeamProfileDto> getTeamById(int id);
+    Optional<TeamProfile> getTeamById(int id);
 }

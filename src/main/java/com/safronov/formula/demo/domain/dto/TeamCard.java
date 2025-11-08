@@ -1,6 +1,6 @@
 package com.safronov.formula.demo.domain.dto;
 
-public record TeamCardDto (
+public record TeamCard(
         Integer id,
         String name,
         String fullName,

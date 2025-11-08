@@ -1,9 +1,9 @@
 package com.safronov.formula.demo.domain.interfaces.team;
 
-import com.safronov.formula.demo.domain.dto.TeamCardDto;
+import com.safronov.formula.demo.domain.dto.TeamCard;
 
 import java.util.List;
 import java.util.function.Supplier;
 
-public interface GetTeamsService extends Supplier<List<TeamCardDto>> {
+public interface GetTeamsService extends Supplier<List<TeamCard>> {
 }

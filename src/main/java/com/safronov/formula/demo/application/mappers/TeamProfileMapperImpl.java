@@ -1,7 +1,8 @@
 package com.safronov.formula.demo.application.mappers;
 
-import com.safronov.formula.demo.domain.dto.DriverCardDto;
-import com.safronov.formula.demo.domain.dto.TeamProfileDto;
+import com.safronov.formula.demo.domain.dto.DriverCard;
+import com.safronov.formula.demo.domain.dto.TeamProfile;
+import com.safronov.formula.demo.domain.dto.TeamSeasonStat;
 import com.safronov.formula.demo.domain.entity.Team;
 import org.springframework.stereotype.Component;
 
@@ -10,8 +11,8 @@ import java.util.List;
 @Component
 public class TeamProfileMapperImpl implements TeamProfileMapper {
     @Override
-    public TeamProfileDto mapToDTO(Team team, List<DriverCardDto> drivers) {
-        return new TeamProfileDto(
+    public TeamProfile mapToDTO(Team team, List<DriverCard> drivers, TeamSeasonStat teamSeasonStat) {
+        return new TeamProfile(
                 team.getName(),
                 team.getFullName(),
                 drivers,
@@ -30,7 +31,8 @@ public class TeamProfileMapperImpl implements TeamProfileMapper {
                 team.getCountry(),
                 team.getLogoUrl(),
                 team.getDescription(),
-                team.getImageFilename()
+                team.getImageFilename(),
+                teamSeasonStat
         );
     }
 }

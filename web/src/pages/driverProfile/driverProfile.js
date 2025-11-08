@@ -51,22 +51,22 @@ async function renderDriverProfile(driver) {
 function renderStats(driver) {
 
     const seasonStats = [
-        { label: 'Season Position', value: driver.driverSeasonStats.seasonPosition},
-        { label: 'Season Points', value: driver.driverSeasonStats.seasonPoints},
-        { label: 'Grand Prix Races', value: driver.driverSeasonStats.gpRaces},
-        { label: 'Grand Prix Points', value: driver.driverSeasonStats.gpPoints},
-        { label: 'Grand Prix Wins', value: driver.driverSeasonStats.gpWins},
-        { label: 'Grand Prix Podiums', value: driver.driverSeasonStats.gpPodiums},
-        { label: 'Grand Prix Poles', value: driver.driverSeasonStats.gpPoles},
-        { label: 'Grand Prix Top 10s', value: driver.driverSeasonStats.gpTop10s},
-        { label: 'DHL Fastest Laps', value: driver.driverSeasonStats.dhlFastestLaps},
-        { label: 'DNFs', value: driver.driverSeasonStats.dnfs},
-        { label: 'Sprint Races', value: driver.driverSeasonStats.sprintRaces},
-        { label: 'Sprint Points', value: driver.driverSeasonStats.sprintPoints},
-        { label: 'Sprint Wins', value: driver.driverSeasonStats.sprintWins},
-        { label: 'Sprint Podiums', value: driver.driverSeasonStats.sprintPodiums},
-        { label: 'Sprint Poles', value: driver.driverSeasonStats.sprintPoles},
-        { label: 'Sprint Top 10s', value: driver.driverSeasonStats.sprintTop10s}
+        { label: 'Season Position', value: driver.driverSeasonStat.seasonPosition},
+        { label: 'Season Points', value: driver.driverSeasonStat.seasonPoints},
+        { label: 'Grand Prix Races', value: driver.driverSeasonStat.gpRaces},
+        { label: 'Grand Prix Points', value: driver.driverSeasonStat.gpPoints},
+        { label: 'Grand Prix Wins', value: driver.driverSeasonStat.gpWins},
+        { label: 'Grand Prix Podiums', value: driver.driverSeasonStat.gpPodiums},
+        { label: 'Grand Prix Poles', value: driver.driverSeasonStat.gpPoles},
+        { label: 'Grand Prix Top 10s', value: driver.driverSeasonStat.gpTop10s},
+        { label: 'DHL Fastest Laps', value: driver.driverSeasonStat.dhlFastestLaps},
+        { label: 'DNFs', value: driver.driverSeasonStat.dnfs},
+        { label: 'Sprint Races', value: driver.driverSeasonStat.sprintRaces},
+        { label: 'Sprint Points', value: driver.driverSeasonStat.sprintPoints},
+        { label: 'Sprint Wins', value: driver.driverSeasonStat.sprintWins},
+        { label: 'Sprint Podiums', value: driver.driverSeasonStat.sprintPodiums},
+        { label: 'Sprint Poles', value: driver.driverSeasonStat.sprintPoles},
+        { label: 'Sprint Top 10s', value: driver.driverSeasonStat.sprintTop10s}
     ];
 
     const careerStats = [

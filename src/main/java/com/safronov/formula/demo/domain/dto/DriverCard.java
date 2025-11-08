@@ -1,6 +1,6 @@
 package com.safronov.formula.demo.domain.dto;
 
-public record DriverCardDto(
+public record DriverCard(
         Integer id,
         String name,
         int number,

@@ -1,7 +1,7 @@
 package com.safronov.formula.demo.api.controllers;
 
-import com.safronov.formula.demo.domain.dto.TeamCardDto;
-import com.safronov.formula.demo.domain.dto.TeamProfileDto;
+import com.safronov.formula.demo.domain.dto.TeamCard;
+import com.safronov.formula.demo.domain.dto.TeamProfile;
 import com.safronov.formula.demo.domain.interfaces.team.GetTeamByIdService;
 import com.safronov.formula.demo.domain.interfaces.team.GetTeamsService;
 import org.springframework.http.ResponseEntity;
@@ -23,12 +23,12 @@ public class TeamController {
     }
 
     @GetMapping
-    public @ResponseBody List<TeamCardDto> getTeams() {
+    public @ResponseBody List<TeamCard> getTeams() {
         return getTeamsService.get();
     }
 
     @GetMapping("/{id}")
-    public @ResponseBody ResponseEntity<TeamProfileDto> getTeams(@PathVariable Integer id) {
+    public @ResponseBody ResponseEntity<TeamProfile> getTeams(@PathVariable Integer id) {
         return getTeamByIdService.getTeamById(id)
                     .map(ResponseEntity::ok)
                     .orElse(ResponseEntity.notFound().build());

@@ -1,9 +1,9 @@
 package com.safronov.formula.demo.domain.interfaces.driver;
 
-import com.safronov.formula.demo.domain.dto.DriverProfileDto;
+import com.safronov.formula.demo.domain.dto.DriverProfile;
 
 import java.util.Optional;
 
 public interface GetDriverByIdService {
-    Optional<DriverProfileDto> getDriverById(Integer id);
+    Optional<DriverProfile> getDriverById(Integer id);
 }

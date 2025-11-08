@@ -1,6 +1,6 @@
 package com.safronov.formula.demo.domain.dto;
 
-public record DriverSeasonStatsDto(
+public record DriverSeasonStat(
         Long seasonPosition,
         Long seasonPoints,
         Long gpPoints,

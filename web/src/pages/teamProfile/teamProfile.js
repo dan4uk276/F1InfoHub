@@ -33,7 +33,7 @@ async function init() {
         console.log('Team:', team);
         console.log('Team Drivers:', team.drivers);
 
-        await renderTeamProfile(team, team.drivers);
+        await renderTeamProfile(team);
         updatePageTitle(team.name);
     } catch (error) {
         console.error('Error loading team:', error);
@@ -47,10 +47,10 @@ function updatePageTitle(teamName) {
 }
 
 // Render complete team profile
-async function renderTeamProfile(team, drivers) {
+async function renderTeamProfile(team) {
     renderTeamHeroSection(team);
-    renderDriversSection(drivers, team);
-    renderStats(team);
+    renderDriversSection(team.drivers, team);
+    renderStats(team, team.teamSeasonStat);
     renderProfile(team);
     await renderLatestVideos();
 }
@@ -59,24 +59,24 @@ async function renderTeamProfile(team, drivers) {
 
 
 // Render season statistics
-function renderStats(team) {
+function renderStats(team, stats) {
     const seasonStats = [
-        { label: 'Season Position', value: team.position || 'N/A' },
-        { label: 'Season Points', value: team.points || 'N/A' },
-        { label: 'Grand Prix Races', value: team.races || 'N/A' },
-        { label: 'Grand Prix Points', value: team.points || 'N/A' },
-        { label: 'Grand Prix Wins', value: team.wins || 'N/A' },
-        { label: 'Grand Prix Podiums', value: team.podiums || 'N/A' },
-        { label: 'Grand Prix Poles', value: team.poles || 'N/A' },
-        { label: 'Grand Prix Top 10s', value: team.gpTop10s || 'N/A' },
-        { label: 'DHL Fastest Laps', value: team.dhlFastestLaps || 'N/A' },
-        { label: 'DNFs', value: team.dnfs || 'N/A' },
-        { label: 'Sprint Races',  value: team.sprintRaces || 'N/A' },
-        { label: 'Sprint Points', value: team.sprintPoints || 'N/A' },
-        { label: 'Sprint Wins',  value: team.sprintWins || 'N/A' },
-        { label: 'Sprint Podiums', value: team.sprintPodiums || 'N/A' },
-        { label: 'Sprint Poles',  value: team.sprintPoles || 'N/A' },
-        { label: 'Sprint Top 10s', value: team.sprintTop10s || 'N/A' }
+        { label: 'Season Position', value: stats.seasonPosition },
+        { label: 'Season Points', value: stats.seasonPoints },
+        { label: 'Grand Prix Races', value: stats.gpRaces },
+        { label: 'Grand Prix Points', value: stats.gpPoints },
+        { label: 'Grand Prix Wins', value: stats.gpWins },
+        { label: 'Grand Prix Podiums', value: stats.gpPodiums },
+        { label: 'Grand Prix Poles', value: stats.gpPoles },
+        { label: 'Grand Prix Top 10s', value: stats.gpTop10s },
+        { label: 'DHL Fastest Laps', value: stats.fastestLaps },
+        { label: 'DNFs', value: stats.dnfs },
+        { label: 'Sprint Races',  value: stats.sprintRaces },
+        { label: 'Sprint Points', value: stats.sprintPoints },
+        { label: 'Sprint Wins',  value: stats.sprintWins },
+        { label: 'Sprint Podiums', value: stats.sprintPodiums },
+        { label: 'Sprint Poles',  value: stats.sprintPoles },
+        { label: 'Sprint Top 10s', value: stats.sprintTop10s }
     ];
 
     const historyStats = [

@@ -1,9 +1,9 @@
 package com.safronov.formula.demo.application.mappers;
 
-import com.safronov.formula.demo.domain.dto.DriverProfileDto;
-import com.safronov.formula.demo.domain.dto.DriverSeasonStatsDto;
+import com.safronov.formula.demo.domain.dto.DriverProfile;
+import com.safronov.formula.demo.domain.dto.DriverSeasonStat;
 import com.safronov.formula.demo.domain.entity.Driver;
 
 public interface DriverProfileMapper {
-    DriverProfileDto mapToDTO(Driver driver, DriverSeasonStatsDto driverSeasonStatsDto);
+    DriverProfile mapToDTO(Driver driver, DriverSeasonStat driverSeasonStat);
 }

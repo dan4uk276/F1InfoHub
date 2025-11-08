@@ -1,10 +1,10 @@
 package com.safronov.formula.demo.domain.dto;
 import java.util.List;
 
-public record TeamProfileDto(
+public record TeamProfile(
         String name,
         String fullName,
-        List<DriverCardDto> drivers,
+        List<DriverCard> drivers,
         String base,
         String teamChief,
         String technicalChief,
@@ -20,7 +20,8 @@ public record TeamProfileDto(
         String country,
         String logoUrl,
         String description,
-        String imageFilename
+        String imageFilename,
+        TeamSeasonStat teamSeasonStat
 ) {}
 
 

@@ -1,10 +1,9 @@
 package com.safronov.formula.demo.infrastructure.repositories;
 
-import com.safronov.formula.demo.domain.entity.DriverStats;
+import com.safronov.formula.demo.domain.entity.TeamStat;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DriverStatsRepository extends JpaRepository<DriverStats,Integer> {
-
+public interface TeamStatRepository extends JpaRepository<TeamStat,Integer> {
 }

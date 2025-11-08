@@ -5,7 +5,7 @@
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
-    min-height: 256px;
+    min-height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -62,7 +62,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--team-bg-image, no-repeat center center);
+    background-image: url('../../assets/background/f1-driver-card-bg.svg');
     background-size: cover, cover;
     background-repeat: no-repeat, no-repeat;
     background-position: center center, center center;
@@ -86,16 +86,16 @@
 }
 
 .car-image {
-    width: 480px;
+    width: 720px;
     height: auto;
     object-fit: contain;
 
-    transform: translate(3%, 5%);
+    transform: translate(5%, -10%);
     transition: transform 0.3s ease;
 }
 
 .team-card:hover .car-image {
-    transform: translate(3%, 3%) scale(1.03);
+    transform: translate(5%, -10%) scale(1.03);
 }
 
 /* Team Colors */
@@ -125,12 +125,13 @@
 }
 
 .team-logo {
-    width: 50px;
-    height: 50px;
-    min-width: 50px; /* предотвращает сжатие при адаптации */
-    min-height: 50px;
+    width: 70px;
+    height: 70px;
+    min-width: 70px; /* предотвращает сжатие при адаптации */
+    min-height: 70px;
     border-radius: 50%;
     display: flex;
+    margin-top: 1rem;
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.3);
@@ -140,18 +141,18 @@
 }
 
 .team-logo img {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     display: block;
-    transform: translateX(12%);
+    
 }
 
 .team-name {
-    font-size: clamp(1.8rem, 3vw, 2rem);
+    font-size: clamp(2.3rem, 3vw, 2.5rem);
     font-weight: 650;
     line-height: 1.1;
-    margin-bottom: 8px;
+    padding-top: 1rem;
     font-family: 'f1-regular', sans-serif;
 }
 
@@ -163,6 +164,7 @@
     align-items: center;
     text-align: left;
     gap: 15px;
+    padding-top: 1rem;
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
@@ -199,7 +201,7 @@
 }
 
 .driver-name-short {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
     text-align: left;
@@ -219,10 +221,6 @@
 }
 
 @media (max-width: 768px) {
-    .team-card {
-        min-height: 256px;
-        padding: 25px;
-    }
 
     .driver-item {
         width: 100%;

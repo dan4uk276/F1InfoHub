@@ -1,6 +1,6 @@
 package com.safronov.formula.demo.domain.dto;
 
-public record DriverProfileDto (
+public record DriverProfile(
     String name,
     int number,
     String teamName,
@@ -16,5 +16,5 @@ public record DriverProfileDto (
     String placeOfBirth,
     String biography,
     String quote,
-    DriverSeasonStatsDto driverSeasonStats
+    DriverSeasonStat driverSeasonStat
 ){}
